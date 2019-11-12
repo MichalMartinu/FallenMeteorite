@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PlaceholderViewController.swift
 //  FallenMeteorite
 //
 //  Created by Michal Martinů on 12/11/2019.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PlaceholderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .red
     }
-
-
 }
 
