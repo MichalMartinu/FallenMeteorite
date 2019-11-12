@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		0786D091237AD7E800D6BEB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D090237AD7E800D6BEB1 /* AppDelegate.swift */; };
 		0786D093237AD7E800D6BEB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */; };
-		0786D095237AD7E800D6BEB1 /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D094237AD7E800D6BEB1 /* PlaceholderViewController.swift */; };
+		0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D094237AD7E800D6BEB1 /* MeteoriteListViewController.swift */; };
 		0786D09A237AD7EA00D6BEB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0786D099237AD7EA00D6BEB1 /* Assets.xcassets */; };
 		0786D09D237AD7EA00D6BEB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0786D09B237AD7EA00D6BEB1 /* LaunchScreen.storyboard */; };
 		0786D0A9237AE73400D6BEB1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0A8237AE73400D6BEB1 /* AppCoordinator.swift */; };
 		0786D0AB237AE73900D6BEB1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0AA237AE73900D6BEB1 /* Coordinator.swift */; };
+		0786D0B2237AF8C700D6BEB1 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B1237AF8C700D6BEB1 /* NetworkingManager.swift */; };
+		0786D0B4237B038400D6BEB1 /* Meteorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B3237B038400D6BEB1 /* Meteorite.swift */; };
+		0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B5237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld */; };
+		0786D0E2237B224C00D6BEB1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0786D08D237AD7E800D6BEB1 /* FallenMeteorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallenMeteorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0786D090237AD7E800D6BEB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0786D094237AD7E800D6BEB1 /* PlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewController.swift; sourceTree = "<group>"; };
+		0786D094237AD7E800D6BEB1 /* MeteoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListViewController.swift; sourceTree = "<group>"; };
 		0786D099237AD7EA00D6BEB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0786D09C237AD7EA00D6BEB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0786D09E237AD7EA00D6BEB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0786D0A8237AE73400D6BEB1 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0786D0AA237AE73900D6BEB1 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0786D0B1237AF8C700D6BEB1 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		0786D0B3237B038400D6BEB1 /* Meteorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteorite.swift; sourceTree = "<group>"; };
+		0786D0B6237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FallenMeteorite.xcdatamodel; sourceTree = "<group>"; };
+		0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,7 @@
 				0786D0A4237AE68E00D6BEB1 /* Model */,
 				0786D0A6237AE69D00D6BEB1 /* View */,
 				0786D0A5237AE69700D6BEB1 /* Controller */,
+				0786D0AC237AEF5F00D6BEB1 /* Networking */,
 				0786D0A7237AE6A100D6BEB1 /* Resources */,
 			);
 			path = FallenMeteorite;
@@ -73,6 +82,8 @@
 		0786D0A4237AE68E00D6BEB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0786D0B3237B038400D6BEB1 /* Meteorite.swift */,
+				0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -80,7 +91,7 @@
 		0786D0A5237AE69700D6BEB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0786D094237AD7E800D6BEB1 /* PlaceholderViewController.swift */,
+				0786D094237AD7E800D6BEB1 /* MeteoriteListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -98,8 +109,17 @@
 				0786D099237AD7EA00D6BEB1 /* Assets.xcassets */,
 				0786D09B237AD7EA00D6BEB1 /* LaunchScreen.storyboard */,
 				0786D09E237AD7EA00D6BEB1 /* Info.plist */,
+				0786D0B5237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		0786D0AC237AEF5F00D6BEB1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0786D0B1237AF8C700D6BEB1 /* NetworkingManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,10 +193,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0786D0A9237AE73400D6BEB1 /* AppCoordinator.swift in Sources */,
-				0786D095237AD7E800D6BEB1 /* PlaceholderViewController.swift in Sources */,
+				0786D0B2237AF8C700D6BEB1 /* NetworkingManager.swift in Sources */,
+				0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */,
 				0786D0AB237AE73900D6BEB1 /* Coordinator.swift in Sources */,
+				0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */,
 				0786D091237AD7E800D6BEB1 /* AppDelegate.swift in Sources */,
+				0786D0E2237B224C00D6BEB1 /* CoreDataManager.swift in Sources */,
 				0786D093237AD7E800D6BEB1 /* SceneDelegate.swift in Sources */,
+				0786D0B4237B038400D6BEB1 /* Meteorite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +392,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0786D0B5237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0786D0B6237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodel */,
+			);
+			currentVersion = 0786D0B6237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodel */;
+			path = FallenMeteorite.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0786D085237AD7E800D6BEB1 /* Project object */;
 }
