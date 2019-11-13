@@ -9,12 +9,21 @@
 import UIKit
 import CoreData
 
+protocol AppCoordinatorDelegate: AnyObject {
+
+    func appCoordinator(_ coordinator: AppCoordinator, didUpateMeteorites: [CDMeteorite])
+}
+
 final class AppCoordinator: Coordinator {
 
     var navigationController: UINavigationController
 
+    weak var delegate: AppCoordinatorDelegate?
+
     private let userDefaults = UserDefaults()
     private let coreDataManager = CoreDataManager(context: AppDelegate.viewContext)
+
+    private let currentDate = Date()
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -22,52 +31,63 @@ final class AppCoordinator: Coordinator {
 
     func start() {
 
-        let currentDate = Date()
-
         if let lastUpdateDate = userDefaults.lastUpdateDate() {
+            startWithSavedData(lastUpdated: lastUpdateDate)
 
-            if DateManager.checkIfDate(currentDate, isInSameDayAs: lastUpdateDate) {
-                fetchAndShowListVCWithSavedMeterorites()
-            } else {
-                fetchAndShowListVCWithSavedMeterorites()
-                fetchNetworkData { result in
-
-                    switch result {
-                        case .success(let meteorites):
-                            self.updateData(meteorites)
-                        case .error(let error):
-                            print(error) //TODO: Handle
-                    }
-                }
-            }
         } else {
-            // TODO: This
-            // Empty
-            // Show loading screen
+            startWithoutSavedData()
+        }
+    }
+
+    private func startWithSavedData(lastUpdated: Date) {
+
+        if DateManager.checkIfDate(currentDate, isInSameDayAs: lastUpdated) {
+            fetchAndShowListVCWithSavedMeterorites()
+        } else {
+            fetchAndShowListVCWithSavedMeterorites()
             fetchNetworkData { result in
 
                 switch result {
                     case .success(let meteorites):
-                        self.updateData(meteorites)
+                        let savedMeteorites = self.updateData(meteorites)
+                        self.delegate?.appCoordinator(self, didUpateMeteorites: savedMeteorites)
                     case .error(let error):
                         print(error) //TODO: Handle
                 }
             }
-
-            navigationController.viewControllers = [MeteoriteListViewController(meteorites:[CDMeteorite](), userDefaults: userDefaults)]
         }
     }
 
-    func fetchAndShowListVCWithSavedMeterorites() {
+    private func startWithoutSavedData() {
 
-        let meteoriteListViewController = MeteoriteListViewController(
-            meteorites: coreDataManager.fetchAllMeteorites(),
-            userDefaults: userDefaults
-        )
+        // TODO: This
+        // Empty
+        // Show loading screen
+        fetchNetworkData { result in
+
+            switch result {
+                case .success(let meteorites):
+                    let savedMeteorites = self.updateData(meteorites)
+                    self.delegate?.appCoordinator(self, didUpateMeteorites: savedMeteorites)
+                case .error(let error):
+                    print(error) //TODO: Handle
+            }
+        }
+
+        navigationController.viewControllers = [
+            MeteoriteListViewController(meteorites:[CDMeteorite]())
+        ]
+    }
+
+    private func fetchAndShowListVCWithSavedMeterorites() {
+
+        let meteoriteListViewController = MeteoriteListViewController(meteorites: coreDataManager.fetchAllMeteoritesSorted())
+
+        delegate = meteoriteListViewController
         navigationController.viewControllers = [meteoriteListViewController]
     }
 
-    func fetchNetworkData(completion: @escaping (NetworkingManager.Result) -> Void) {
+    private func fetchNetworkData(completion: @escaping (NetworkingManager.Result) -> Void) {
 
         let networkingManager = NetworkingManager()
 

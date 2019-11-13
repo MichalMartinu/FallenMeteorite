@@ -50,9 +50,10 @@ final class CoreDataManager {
         }
     }
 
-    func fetchAllMeteorites() -> [CDMeteorite] {
+    func fetchAllMeteoritesSorted() -> [CDMeteorite] {
 
         let fetchRequest:NSFetchRequest<CDMeteorite> = CDMeteorite.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(CDMeteorite.mass), ascending: false)]
 
         do {
             let meteorites = try context.fetch(fetchRequest)

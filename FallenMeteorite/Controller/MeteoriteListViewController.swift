@@ -7,30 +7,64 @@
 //
 
 import UIKit
-import CoreData
 
 class MeteoriteListViewController: UIViewController {
 
-    private let coreDataManager = CoreDataManager(context: AppDelegate.viewContext)
-    private let userDefaults: UserDefaults
+    private lazy var rootView: MeteoriteListView = {
+        let view = MeteoriteListView()
+        view.tableView.delegate = self
+        view.tableView.dataSource = dataSource
+        view.tableView.register(
+            MeteoriteItemTableViewCell.self,
+            forCellReuseIdentifier: MeteoriteItemTableViewCell.identifier
+        )
+        return view
+    }()
 
-    init(meteorites: [CDMeteorite], userDefaults: UserDefaults) {
+    private let meteoriteLogoImageView: UIImageView = {
+        let logoImageView = Images.imageView(.meteoriteLogo)
+        logoImageView.contentMode = .scaleAspectFill
+        return logoImageView
+    }()
 
-        self.userDefaults = userDefaults
+    private let dataSource: MeteoriteListDataSource
+
+    init(meteorites: [CDMeteorite]) {
+
+        dataSource = MeteoriteListDataSource(meteorites: meteorites)
 
         super.init(nibName: nil, bundle: nil)
-
-        print(meteorites.count)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func loadView() {
+        super.loadView()
+
+        view = rootView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .red
+
+        navigationController?.navigationBar.barStyle = .black
+        navigationItem.titleView = meteoriteLogoImageView
     }
 }
 
+extension MeteoriteListViewController: AppCoordinatorDelegate {
+
+    func appCoordinator(_ coordinator: AppCoordinator, didUpateMeteorites: [CDMeteorite]) {
+        // TODO: Implement
+    }
+}
+
+extension MeteoriteListViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return MeteoriteItemTableViewCell.preferredHeight
+    }
+}
