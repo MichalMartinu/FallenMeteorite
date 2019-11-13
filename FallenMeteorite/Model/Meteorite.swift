@@ -9,6 +9,7 @@
 import Foundation
 
 struct Meteorite: Codable {
+
     var name: String
     var id: String
     var recclass: String?
@@ -19,6 +20,7 @@ struct Meteorite: Codable {
 }
 
 struct Geolocation: Codable {
+    
     var latitude: String
     var longitude: String
 }

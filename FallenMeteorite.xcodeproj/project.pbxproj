@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075FE2B3237C1BA700DC8681 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE2B2237C1BA700DC8681 /* DateManager.swift */; };
+		075FE2B7237C1F7500DC8681 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE2B6237C1F7500DC8681 /* UserDefaultsExtensions.swift */; };
 		0786D091237AD7E800D6BEB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D090237AD7E800D6BEB1 /* AppDelegate.swift */; };
 		0786D093237AD7E800D6BEB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */; };
 		0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D094237AD7E800D6BEB1 /* MeteoriteListViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		075FE2B2237C1BA700DC8681 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		075FE2B6237C1F7500DC8681 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		0786D08D237AD7E800D6BEB1 /* FallenMeteorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallenMeteorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0786D090237AD7E800D6BEB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075FE2AF237C123D00DC8681 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				075FE2B2237C1BA700DC8681 /* DateManager.swift */,
+				075FE2B6237C1F7500DC8681 /* UserDefaultsExtensions.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		0786D084237AD7E800D6BEB1 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +83,7 @@
 				0786D0A8237AE73400D6BEB1 /* AppCoordinator.swift */,
 				0786D0AA237AE73900D6BEB1 /* Coordinator.swift */,
 				0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */,
+				075FE2AF237C123D00DC8681 /* General */,
 				0786D0A4237AE68E00D6BEB1 /* Model */,
 				0786D0A6237AE69D00D6BEB1 /* View */,
 				0786D0A5237AE69700D6BEB1 /* Controller */,
@@ -196,8 +210,10 @@
 				0786D0B2237AF8C700D6BEB1 /* NetworkingManager.swift in Sources */,
 				0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */,
 				0786D0AB237AE73900D6BEB1 /* Coordinator.swift in Sources */,
+				075FE2B7237C1F7500DC8681 /* UserDefaultsExtensions.swift in Sources */,
 				0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */,
 				0786D091237AD7E800D6BEB1 /* AppDelegate.swift in Sources */,
+				075FE2B3237C1BA700DC8681 /* DateManager.swift in Sources */,
 				0786D0E2237B224C00D6BEB1 /* CoreDataManager.swift in Sources */,
 				0786D093237AD7E800D6BEB1 /* SceneDelegate.swift in Sources */,
 				0786D0B4237B038400D6BEB1 /* Meteorite.swift in Sources */,

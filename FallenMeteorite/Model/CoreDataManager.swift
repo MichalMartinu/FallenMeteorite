@@ -17,28 +17,46 @@ final class CoreDataManager {
         self.context = context
     }
 
-    func saveMeteorites(_ meteorites: [Meteorite]) {
+    func saveMeteorites(_ meteorites: [Meteorite]) -> [CDMeteorite] {
+
+        var savedMeteorites = [CDMeteorite]()
 
         meteorites.forEach { meteorite in
 
-            let cdmeteorite = CDMeteorite(context: context)
+            let savedMeteorite = CDMeteorite(context: context)
 
-            cdmeteorite.name = meteorite.name
-            cdmeteorite.fall = meteorite.fall
-            cdmeteorite.id = meteorite.id
-            cdmeteorite.mass = Int64(meteorite.mass) ?? 0
-            
+            savedMeteorite.name = meteorite.name
+            savedMeteorite.fall = meteorite.fall
+            savedMeteorite.id = meteorite.id
+            savedMeteorite.mass = Double(meteorite.mass) ?? 0.0
+            savedMeteorite.year = Int64(DateManager.yearFromJson(meteorite.year ?? "")) ?? 0
+
             if
             let latitude = meteorite.geolocation?.latitude,
             let longitude = meteorite.geolocation?.longitude
             {
-                cdmeteorite.latitude = Double(latitude) ?? 0.0
-                cdmeteorite.longitude = Double(longitude) ?? 0.0
+                savedMeteorite.latitude = Double(latitude) ?? 0.0
+                savedMeteorite.longitude = Double(longitude) ?? 0.0
             }
+
+            savedMeteorites.append(savedMeteorite)
         }
 
         do {
             try context.save()
+            return savedMeteorites
+        } catch {
+            fatalError("Failed to execute request: \(error)")
+        }
+    }
+
+    func fetchAllMeteorites() -> [CDMeteorite] {
+
+        let fetchRequest:NSFetchRequest<CDMeteorite> = CDMeteorite.fetchRequest()
+
+        do {
+            let meteorites = try context.fetch(fetchRequest)
+            return meteorites
         } catch {
             fatalError("Failed to execute request: \(error)")
         }
