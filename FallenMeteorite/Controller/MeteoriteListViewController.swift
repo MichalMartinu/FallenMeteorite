@@ -27,18 +27,7 @@ class MeteoriteListViewController: UIViewController {
         return logoImageView
     }()
 
-    private let dataSource: MeteoriteListDataSource
-
-    init(meteorites: [CDMeteorite]) {
-
-        dataSource = MeteoriteListDataSource(meteorites: meteorites)
-
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private let dataSource = MeteoriteListDataSource()
 
     override func loadView() {
         super.loadView()
@@ -56,9 +45,33 @@ class MeteoriteListViewController: UIViewController {
 
 extension MeteoriteListViewController: AppCoordinatorDelegate {
 
-    func appCoordinator(_ coordinator: AppCoordinator, didUpateMeteorites: [CDMeteorite]) {
-        // TODO: Implement
+    func appCoordinator(_ coordinator: AppCoordinator, upateMeteorites meteorites: [CDMeteorite]) {
+
+        dataSource.updateData(with: meteorites)
+        rootView.tableView.reloadData()
+
+        if meteorites.isEmpty {
+            rootView.informationViewContentType(.empty)
+        } else {
+            rootView.informationViewContentType(.hidden)
+        }
     }
+
+    func appCoordinatorSetLoadingState(_ coordinator: AppCoordinator) {
+
+        rootView.informationViewContentType(.loading)
+    }
+
+    func appCoordinatorSetOfflineState(_ coordinator: AppCoordinator) {
+
+        rootView.informationViewContentType(.offline)
+    }
+
+    func appCoordintorSetErrorState(_ coordinator: AppCoordinator, message: String) {
+
+        rootView.informationViewContentType(.error, message: message)
+    }
+
 }
 
 extension MeteoriteListViewController: UITableViewDelegate {

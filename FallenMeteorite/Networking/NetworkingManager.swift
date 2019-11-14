@@ -12,6 +12,7 @@ final class NetworkingManager {
 
     enum Result {
         case success([Meteorite])
+        case offline
         case error(String)
     }
 
@@ -35,6 +36,8 @@ final class NetworkingManager {
     private let sqlQueryString = "year >= '2011-01-01T00:00' and mass IS NOT NULL"
     private let orderString = "mass DESC"
 
+    private let offlineErrorCode = -1009
+
     func loadData(completion: @escaping (Result) -> Void) {
 
         guard let urlRequest = urlRequest else {
@@ -44,6 +47,11 @@ final class NetworkingManager {
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
 
             if let error = error {
+
+                if let nsError = error as NSError?, nsError.code == self.offlineErrorCode {
+                    return completion(.offline)
+                }
+
                 return completion(.error("\(error.localizedDescription)"))
             }
 

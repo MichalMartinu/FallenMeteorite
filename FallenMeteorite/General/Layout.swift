@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Layout {
+enum Layout {
 
     enum padding: CGFloat {
 
@@ -31,4 +31,6 @@ struct Layout {
         /// 16
         case large = 16
     }
+
+    static let prefferedButtonHeight: CGFloat = 44
 }

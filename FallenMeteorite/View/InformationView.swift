@@ -2,7 +2,7 @@
 //  InformationView.swift
 //  FallenMeteorite
 //
-//  Created by Michal Martinů on 13/11/2019.
+//  Created by Michal Martinů on 14/11/2019.
 //  Copyright © 2019 Michal Martinů. All rights reserved.
 //
 
@@ -10,25 +10,55 @@ import UIKit
 
 final class InformationView: UIView {
 
-    var preferredWidth: CGFloat {
-        return informationLabel.frame.width + 2 * padding
-    }
+    private lazy var loadingIndicatorView: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.style = .large
+        activityIndicator.color = .white
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
 
-    static let preferredHeight: CGFloat = 18
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
 
-    private let informationLabel: UILabel = {
+    private let messageHeaderLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 10)
-        label.textColor = CustomColor.color(.yellow)
+        label.textColor = CustomColor.color(.highEmphasis)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
         return label
     }()
 
-    private let padding: CGFloat = 6
+    private let messageLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = CustomColor.color(.mediumEmphasis)
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
+        return label
+    }()
+
+    let button: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = CustomColor.color(.red)
+        button.layer.cornerRadius = Layout.roundCorners.medium.rawValue
+        button.setBackgroundColor(CustomColor.color(.darkRed), forState: .highlighted)
+        button.setTitleColor(CustomColor.color(.disabled), for: .highlighted)
+        return button
+    }()
 
     init() {
         super.init(frame: .zero)
 
-        addSubview(informationLabel)
+        backgroundColor = CustomColor.color(.background)
+
+        [imageView, loadingIndicatorView, messageHeaderLabel, messageLabel, button].forEach{ addSubview($0) }
     }
 
     required init?(coder: NSCoder) {
@@ -38,22 +68,82 @@ final class InformationView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        informationLabel.sizeToFit()
+        let messageHeaderLabelSpacing: CGFloat = 84
+        let messageLabelSpacing: CGFloat = 16
+        let buttonSpacing: CGFloat = 48
 
-        let minYinformationLabel: CGFloat = (frame.height - informationLabel.frame.height) / 2
+        let contentViewFrame: CGFloat = 64
 
-        informationLabel.frame = CGRect(
-            x: padding,
-            y: minYinformationLabel,
-            width: informationLabel.frame.width,
-            height: informationLabel.frame.height
+        let maxLabelWidth: CGFloat = 280
+        let expectedLabelSize = CGSize(width: maxLabelWidth, height: .greatestFiniteMagnitude)
+
+        let messageHeaderLabelSize = messageHeaderLabel.sizeThatFits(expectedLabelSize)
+        let messageLabelSize = messageLabel.sizeThatFits(expectedLabelSize)
+
+        let viewsHeight =
+            contentViewFrame + messageHeaderLabelSpacing + messageHeaderLabelSize.height
+                + messageLabelSpacing + messageLabelSize.height
+
+        let minXcontentView = (frame.width - contentViewFrame) / 2
+        let minYcontentView = (frame.height - viewsHeight) / 2
+
+        [loadingIndicatorView, imageView].forEach{
+            $0.frame = CGRect(
+                x: minXcontentView,
+                y: minYcontentView,
+                width: contentViewFrame,
+                height: contentViewFrame
+            )
+        }
+
+        let minXmessageHeaderLabel = (frame.width - messageHeaderLabelSize.width) / 2
+
+        messageHeaderLabel.frame = CGRect(
+            x: minXmessageHeaderLabel,
+            y: loadingIndicatorView.frame.maxY + messageHeaderLabelSpacing,
+            width: messageHeaderLabelSize.width,
+            height: messageHeaderLabelSize.height
+        )
+
+        let minXmessageLabel = (frame.width - messageLabelSize.width) / 2
+
+        messageLabel.frame = CGRect(
+            x: minXmessageLabel,
+            y: messageHeaderLabel.frame.maxY + messageLabelSpacing,
+            width: messageLabelSize.width,
+            height: messageLabelSize.height
+        )
+
+        let minXbutton = (frame.width - maxLabelWidth) / 2
+
+        button.frame = CGRect(
+            x: minXbutton,
+            y: messageLabel.frame.maxY + buttonSpacing,
+            width: maxLabelWidth,
+            height: Layout.prefferedButtonHeight
         )
     }
 
-    func configure(_ text: String, backgroundColor: UIColor) {
+    func configure(header: String, message: String?, image: UIImage? = nil, buttonTitle: String? = nil) {
 
-        informationLabel.text = text
-        self.backgroundColor = backgroundColor
+        messageHeaderLabel.text = header
+        messageLabel.text = message
+
+        if image == nil {
+            loadingIndicatorView.startAnimating()
+            imageView.isHidden = true
+        } else {
+            loadingIndicatorView.stopAnimating()
+            imageView.isHidden = false
+            imageView.image = image
+        }
+
+        if let buttonTitle = buttonTitle {
+            button.isHidden = false
+            button.setTitle(buttonTitle, for: .normal)
+        } else {
+            button.isHidden = true
+        }
 
         setNeedsLayout()
     }

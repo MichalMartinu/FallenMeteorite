@@ -11,7 +11,10 @@ import CoreData
 
 protocol AppCoordinatorDelegate: AnyObject {
 
-    func appCoordinator(_ coordinator: AppCoordinator, didUpateMeteorites: [CDMeteorite])
+    func appCoordinator(_ coordinator: AppCoordinator, upateMeteorites meteorites: [CDMeteorite])
+    func appCoordinatorSetLoadingState(_ coordinator: AppCoordinator)
+    func appCoordinatorSetOfflineState(_ coordinator: AppCoordinator)
+    func appCoordintorSetErrorState(_ coordinator: AppCoordinator, message: String)
 }
 
 final class AppCoordinator: Coordinator {
@@ -19,6 +22,12 @@ final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
 
     weak var delegate: AppCoordinatorDelegate?
+
+    private lazy var meteoriteListViewController: MeteoriteListViewController = {
+        let controller = MeteoriteListViewController()
+        delegate = controller
+        return controller
+    }()
 
     private let userDefaults = UserDefaults()
     private let coreDataManager = CoreDataManager(context: AppDelegate.viewContext)
@@ -31,9 +40,12 @@ final class AppCoordinator: Coordinator {
 
     func start() {
 
-        if let lastUpdateDate = userDefaults.lastUpdateDate() {
-            startWithSavedData(lastUpdated: lastUpdateDate)
+        navigationController.viewControllers = [meteoriteListViewController]
+        delegate?.appCoordinatorSetLoadingState(self)
 
+        if let lastUpdateDate = userDefaults.lastUpdateDate() {
+            delegate?.appCoordinator(self, upateMeteorites: coreDataManager.fetchAllMeteoritesSorted())
+            startWithSavedData(lastUpdated: lastUpdateDate)
         } else {
             startWithoutSavedData()
         }
@@ -41,50 +53,19 @@ final class AppCoordinator: Coordinator {
 
     private func startWithSavedData(lastUpdated: Date) {
 
-        if DateManager.checkIfDate(currentDate, isInSameDayAs: lastUpdated) {
-            fetchAndShowListVCWithSavedMeterorites()
-        } else {
-            fetchAndShowListVCWithSavedMeterorites()
-            fetchNetworkData { result in
+        if !DateManager.checkIfDate(currentDate, isInSameDayAs: lastUpdated) {
 
-                switch result {
-                    case .success(let meteorites):
-                        let savedMeteorites = self.updateData(meteorites)
-                        self.delegate?.appCoordinator(self, didUpateMeteorites: savedMeteorites)
-                    case .error(let error):
-                        print(error) //TODO: Handle
-                }
+            fetchNetworkData { result in
+                self.handleNetworkResult(result)
             }
         }
     }
 
     private func startWithoutSavedData() {
 
-        // TODO: This
-        // Empty
-        // Show loading screen
         fetchNetworkData { result in
-
-            switch result {
-                case .success(let meteorites):
-                    let savedMeteorites = self.updateData(meteorites)
-                    self.delegate?.appCoordinator(self, didUpateMeteorites: savedMeteorites)
-                case .error(let error):
-                    print(error) //TODO: Handle
-            }
+            self.handleNetworkResult(result)
         }
-
-        navigationController.viewControllers = [
-            MeteoriteListViewController(meteorites:[CDMeteorite]())
-        ]
-    }
-
-    private func fetchAndShowListVCWithSavedMeterorites() {
-
-        let meteoriteListViewController = MeteoriteListViewController(meteorites: coreDataManager.fetchAllMeteoritesSorted())
-
-        delegate = meteoriteListViewController
-        navigationController.viewControllers = [meteoriteListViewController]
     }
 
     private func fetchNetworkData(completion: @escaping (NetworkingManager.Result) -> Void) {
@@ -96,6 +77,19 @@ final class AppCoordinator: Coordinator {
             DispatchQueue.main.async {
                 completion(result)
             }
+        }
+    }
+
+    private func handleNetworkResult(_ result: NetworkingManager.Result) {
+
+        switch result {
+            case .success(let meteorites):
+                let savedMeteorites = self.updateData(meteorites)
+                self.delegate?.appCoordinator(self, upateMeteorites: savedMeteorites)
+            case .error(let error):
+                self.delegate?.appCoordintorSetErrorState(self, message: error)
+            case .offline:
+                self.delegate?.appCoordinatorSetOfflineState(self)
         }
     }
 

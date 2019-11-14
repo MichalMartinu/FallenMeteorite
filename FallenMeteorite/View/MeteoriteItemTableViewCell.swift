@@ -26,9 +26,9 @@ final class MeteoriteItemTableViewCell: UITableViewCell {
         return imageView
     }()
 
-    private let yearInformationView = InformationView()
+    private let yearInformationView = ViewWithLabel()
 
-    private let weightInformationView = InformationView()
+    private let weightInformationView = ViewWithLabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,7 +60,7 @@ final class MeteoriteItemTableViewCell: UITableViewCell {
             height: imageSize
         )
 
-        let viewsHeight = nameLabel.frame.height + InformationView.preferredHeight + Layout.padding.small.rawValue
+        let viewsHeight = nameLabel.frame.height + ViewWithLabel.preferredHeight + Layout.padding.small.rawValue
         let minYnameLabel = (contentView.bounds.height - viewsHeight) / 2
 
         nameLabel.frame = CGRect(
@@ -74,14 +74,14 @@ final class MeteoriteItemTableViewCell: UITableViewCell {
             x: meteoriteImageView.frame.maxX + Layout.padding.large.rawValue,
             y: nameLabel.frame.maxY + Layout.padding.small.rawValue,
             width: yearInformationView.preferredWidth,
-            height: InformationView.preferredHeight
+            height: ViewWithLabel.preferredHeight
         )
 
         weightInformationView.frame = CGRect(
             x: yearInformationView.frame.maxX + Layout.padding.small.rawValue,
             y: nameLabel.frame.maxY + Layout.padding.small.rawValue,
             width: weightInformationView.preferredWidth,
-            height: InformationView.preferredHeight
+            height: ViewWithLabel.preferredHeight
         )
     }
 

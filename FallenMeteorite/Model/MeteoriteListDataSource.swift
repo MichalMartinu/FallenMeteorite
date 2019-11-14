@@ -12,10 +12,6 @@ final class MeteoriteListDataSource: NSObject, UITableViewDataSource {
 
     private var meteorites = [CDMeteorite]()
 
-    init(meteorites: [CDMeteorite]) {
-        self.meteorites = meteorites
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return meteorites.count
     }

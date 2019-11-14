@@ -10,6 +10,14 @@ import UIKit
 
 final class MeteoriteListView: UIView {
 
+    enum InformationContentType {
+        case empty
+        case loading
+        case offline
+        case error
+        case hidden
+    }
+
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorColor = CustomColor.color(.lightGray)
@@ -18,13 +26,33 @@ final class MeteoriteListView: UIView {
         return tableView
     }()
 
+    private let informationView = InformationView()
+
+    private let loadingHeaderText = "Meteorites are loading"
+    private let loadingMessageText = "While this app is loading I would like to tell you:\nHave a good day! :)"
+
+    private let emptyImage = Images.image(.meteoriteIcon)
+    private let emptyHeaderText = "There are not meteorites to show"
+    private let emptyMessageText = "We cannot find any meteorites in database. :("
+
+    private let errorImage = Images.image(.meteoriteIcon)
+    private let errorHeaderText = "Error when loading data"
+
+    private let offlineImage = Images.image(.meteoriteIcon)
+    private let offlineHeaderText = "Your are Offline"
+    private let offlineMessageText = "Please check your internet connection and try your request again."
+
+    private let tryAgainButtonText = "Try again"
+
+
     init() {
         super.init(frame: .zero)
 
         backgroundColor = CustomColor.color(.background)
         tableView.backgroundColor = CustomColor.color(.background)
 
-        addSubview(tableView)
+
+        [tableView, informationView].forEach{ addSubview($0) }
     }
 
     required init?(coder: NSCoder) {
@@ -34,6 +62,67 @@ final class MeteoriteListView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
+        informationView.frame = frame
         tableView.frame = frame
     }
+
+    func informationViewContentType(_ contentType: InformationContentType, message: String? = nil) {
+
+        informationView.isHidden = false
+
+        switch contentType {
+            case .hidden:
+                informationView.isHidden = true
+            case .empty:
+                informationView.configure(
+                    header: emptyHeaderText,
+                    message: emptyMessageText,
+                    image: emptyImage
+                )
+            case .loading:
+                informationView.configure(header: loadingHeaderText, message: loadingMessageText)
+            case .offline:
+                informationView.configure(
+                    header: offlineHeaderText,
+                    message: offlineMessageText,
+                    image: offlineImage,
+                    buttonTitle: tryAgainButtonText
+                )
+            case .error:
+                informationView.configure(
+                    header: errorHeaderText,
+                    message: message,
+                    image: errorImage,
+                    buttonTitle: tryAgainButtonText
+                )
+        }
+    }
+
+  /*  func informationViewWithButtonContentType(_ contentType: InformationWithButtonContentType, message: String? = nil) {
+        
+        informationView.isHidden = true
+
+        switch contentType {
+            case .hidden:
+                informationViewWithButton.isHidden = true
+            case .offline:
+                informationViewWithButton.isHidden = false
+                informationViewWithButton.configure(
+                    header: offlineHeaderText,
+                    message: offlineMessageText,
+                    image: offlineImage,
+                    buttonTitle: tryAgainButtonText
+                )
+            case .error:
+                informationView.isHidden = false
+                informationViewWithButton.configure(
+                    header: errorHeaderText,
+                    message: message,
+                    image: errorImage,
+                    buttonTitle: tryAgainButtonText
+                )
+
+        }
+    }*/
+
 }

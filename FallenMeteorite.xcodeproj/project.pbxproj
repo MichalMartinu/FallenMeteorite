@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		070B515A237C69AD00262BDD /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5159237C69AD00262BDD /* Images.swift */; };
 		070B515C237C6B8300262BDD /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B515B237C6B8300262BDD /* Layout.swift */; };
-		070B515E237C7E2E00262BDD /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B515D237C7E2E00262BDD /* InformationView.swift */; };
+		070B515E237C7E2E00262BDD /* ViewWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B515D237C7E2E00262BDD /* ViewWithLabel.swift */; };
 		070B5160237C929D00262BDD /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B515F237C929D00262BDD /* CustomColor.swift */; };
 		070B5162237CA41100262BDD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5161237CA41100262BDD /* Formatter.swift */; };
+		070B5164237D559600262BDD /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5163237D559600262BDD /* InformationView.swift */; };
+		070B5168237D827C00262BDD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5167237D827C00262BDD /* Extensions.swift */; };
 		070CE89D237C495B00610882 /* MeteoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE89C237C495B00610882 /* MeteoriteListView.swift */; };
 		070CE89F237C4A5300610882 /* MeteoriteListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */; };
 		070CE8A1237C5D4400610882 /* MeteoriteItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */; };
@@ -33,9 +35,11 @@
 /* Begin PBXFileReference section */
 		070B5159237C69AD00262BDD /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		070B515B237C6B8300262BDD /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		070B515D237C7E2E00262BDD /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		070B515D237C7E2E00262BDD /* ViewWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithLabel.swift; sourceTree = "<group>"; };
 		070B515F237C929D00262BDD /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		070B5161237CA41100262BDD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		070B5163237D559600262BDD /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		070B5167237D827C00262BDD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		070CE89C237C495B00610882 /* MeteoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListView.swift; sourceTree = "<group>"; };
 		070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListDataSource.swift; sourceTree = "<group>"; };
 		070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 				070B515B237C6B8300262BDD /* Layout.swift */,
 				070B515F237C929D00262BDD /* CustomColor.swift */,
 				070B5161237CA41100262BDD /* Formatter.swift */,
+				070B5167237D827C00262BDD /* Extensions.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -136,7 +141,8 @@
 			children = (
 				070CE89C237C495B00610882 /* MeteoriteListView.swift */,
 				070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */,
-				070B515D237C7E2E00262BDD /* InformationView.swift */,
+				070B5163237D559600262BDD /* InformationView.swift */,
+				070B515D237C7E2E00262BDD /* ViewWithLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070B5164237D559600262BDD /* InformationView.swift in Sources */,
 				070CE8A1237C5D4400610882 /* MeteoriteItemTableViewCell.swift in Sources */,
 				070B5162237CA41100262BDD /* Formatter.swift in Sources */,
 				0786D0A9237AE73400D6BEB1 /* AppCoordinator.swift in Sources */,
@@ -237,6 +244,7 @@
 				070CE89F237C4A5300610882 /* MeteoriteListDataSource.swift in Sources */,
 				0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */,
 				070B515C237C6B8300262BDD /* Layout.swift in Sources */,
+				070B5168237D827C00262BDD /* Extensions.swift in Sources */,
 				0786D0AB237AE73900D6BEB1 /* Coordinator.swift in Sources */,
 				075FE2B7237C1F7500DC8681 /* UserDefaultsExtensions.swift in Sources */,
 				070B515A237C69AD00262BDD /* Images.swift in Sources */,
@@ -246,7 +254,7 @@
 				0786D0E2237B224C00D6BEB1 /* CoreDataManager.swift in Sources */,
 				0786D093237AD7E800D6BEB1 /* SceneDelegate.swift in Sources */,
 				070B5160237C929D00262BDD /* CustomColor.swift in Sources */,
-				070B515E237C7E2E00262BDD /* InformationView.swift in Sources */,
+				070B515E237C7E2E00262BDD /* ViewWithLabel.swift in Sources */,
 				0786D0B4237B038400D6BEB1 /* Meteorite.swift in Sources */,
 				070CE89D237C495B00610882 /* MeteoriteListView.swift in Sources */,
 			);

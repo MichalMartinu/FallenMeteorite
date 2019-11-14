@@ -18,6 +18,8 @@ enum CustomColor {
         case lightGray = "light-gray"
         case yellow = "yellow"
         case brown = "brown"
+        case red = "red"
+        case darkRed = "dark-red"
     }
 
     static func color(_ customColor: CustomColorString) -> UIColor {
