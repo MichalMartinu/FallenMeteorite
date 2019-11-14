@@ -11,6 +11,7 @@ import UIKit
 protocol MeteoriteListViewControllerDelegate: AnyObject {
 
     func meteoriteListViewControllerNeedsUpdateData(_ controller: MeteoriteListViewController)
+    func meteoriteListViewControllerDidLoad(_ controller: MeteoriteListViewController)
 }
 
 final class MeteoriteListViewController: UIViewController {
@@ -48,6 +49,7 @@ final class MeteoriteListViewController: UIViewController {
 
         navigationController?.navigationBar.barStyle = .black
         navigationItem.titleView = meteoriteLogoImageView
+        delegate?.meteoriteListViewControllerDidLoad(self)
     }
 }
 

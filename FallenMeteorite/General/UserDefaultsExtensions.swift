@@ -23,4 +23,17 @@ extension UserDefaults {
         
         return self.object(forKey: DefaultsKeys.lastUpdateDate.rawValue) as? Date
     }
+
+    var isFirstLaunch: Bool {
+
+        let hasBeenLaunchedBefore = "hasBeenLaunchedBefore"
+
+        let isFirstLaunch = !self.bool(forKey: hasBeenLaunchedBefore)
+
+        if isFirstLaunch {
+            self.set(true, forKey: hasBeenLaunchedBefore)
+        }
+        
+        return true
+    }
 }

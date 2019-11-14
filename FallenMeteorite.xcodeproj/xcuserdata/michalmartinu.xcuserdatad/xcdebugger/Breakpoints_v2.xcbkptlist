@@ -190,8 +190,8 @@
             filePath = "FallenMeteorite/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "AppCoordinator"
             landmarkType = "3">
          </BreakpointContent>
@@ -225,6 +225,22 @@
             startingLineNumber = "74"
             endingLineNumber = "74"
             landmarkName = "layoutSubviews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BEF33A5-EF91-43A0-9174-4AE4AD33EEE8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallenMeteorite/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "meteoriteListViewControllerDidLoad(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
