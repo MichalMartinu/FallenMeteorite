@@ -8,7 +8,14 @@
 
 import UIKit
 
-class MeteoriteListViewController: UIViewController {
+protocol MeteoriteListViewControllerDelegate: AnyObject {
+
+    func meteoriteListViewControllerNeedsUpdateData(_ controller: MeteoriteListViewController)
+}
+
+final class MeteoriteListViewController: UIViewController {
+
+    weak var delegate: MeteoriteListViewControllerDelegate?
 
     private lazy var rootView: MeteoriteListView = {
         let view = MeteoriteListView()
@@ -18,6 +25,7 @@ class MeteoriteListViewController: UIViewController {
             MeteoriteItemTableViewCell.self,
             forCellReuseIdentifier: MeteoriteItemTableViewCell.identifier
         )
+        view.delegate = self
         return view
     }()
 
@@ -64,12 +72,16 @@ extension MeteoriteListViewController: AppCoordinatorDelegate {
 
     func appCoordinatorSetOfflineState(_ coordinator: AppCoordinator) {
 
-        rootView.informationViewContentType(.offline)
+        if dataSource.meteorites.isEmpty {
+            rootView.informationViewContentType(.offline)
+        }
     }
 
     func appCoordintorSetErrorState(_ coordinator: AppCoordinator, message: String) {
 
-        rootView.informationViewContentType(.error, message: message)
+        if dataSource.meteorites.isEmpty {
+            rootView.informationViewContentType(.error, message: message)
+        }
     }
 
 }
@@ -79,5 +91,14 @@ extension MeteoriteListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return MeteoriteItemTableViewCell.preferredHeight
+    }
+}
+
+extension MeteoriteListViewController: MeteoriteListViewDelegate {
+
+    func meteoriteListViewTappedButton(_ view: MeteoriteListView, with button: UIButton) {
+
+        rootView.informationViewContentType(.loading)
+        delegate?.meteoriteListViewControllerNeedsUpdateData(self)
     }
 }

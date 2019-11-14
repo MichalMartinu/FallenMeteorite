@@ -26,7 +26,7 @@
 		0786D09D237AD7EA00D6BEB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0786D09B237AD7EA00D6BEB1 /* LaunchScreen.storyboard */; };
 		0786D0A9237AE73400D6BEB1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0A8237AE73400D6BEB1 /* AppCoordinator.swift */; };
 		0786D0AB237AE73900D6BEB1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0AA237AE73900D6BEB1 /* Coordinator.swift */; };
-		0786D0B2237AF8C700D6BEB1 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B1237AF8C700D6BEB1 /* NetworkingManager.swift */; };
+		0786D0B2237AF8C700D6BEB1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B1237AF8C700D6BEB1 /* NetworkManager.swift */; };
 		0786D0B4237B038400D6BEB1 /* Meteorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B3237B038400D6BEB1 /* Meteorite.swift */; };
 		0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B5237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld */; };
 		0786D0E2237B224C00D6BEB1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */; };
@@ -54,7 +54,7 @@
 		0786D09E237AD7EA00D6BEB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0786D0A8237AE73400D6BEB1 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0786D0AA237AE73900D6BEB1 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		0786D0B1237AF8C700D6BEB1 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		0786D0B1237AF8C700D6BEB1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0786D0B3237B038400D6BEB1 /* Meteorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteorite.swift; sourceTree = "<group>"; };
 		0786D0B6237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FallenMeteorite.xcdatamodel; sourceTree = "<group>"; };
 		0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				0786D0A4237AE68E00D6BEB1 /* Model */,
 				0786D0A6237AE69D00D6BEB1 /* View */,
 				0786D0A5237AE69700D6BEB1 /* Controller */,
-				0786D0AC237AEF5F00D6BEB1 /* Networking */,
+				0786D0AC237AEF5F00D6BEB1 /* Network */,
 				0786D0A7237AE6A100D6BEB1 /* Resources */,
 			);
 			path = FallenMeteorite;
@@ -158,12 +158,12 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		0786D0AC237AEF5F00D6BEB1 /* Networking */ = {
+		0786D0AC237AEF5F00D6BEB1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0786D0B1237AF8C700D6BEB1 /* NetworkingManager.swift */,
+				0786D0B1237AF8C700D6BEB1 /* NetworkManager.swift */,
 			);
-			path = Networking;
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +240,7 @@
 				070CE8A1237C5D4400610882 /* MeteoriteItemTableViewCell.swift in Sources */,
 				070B5162237CA41100262BDD /* Formatter.swift in Sources */,
 				0786D0A9237AE73400D6BEB1 /* AppCoordinator.swift in Sources */,
-				0786D0B2237AF8C700D6BEB1 /* NetworkingManager.swift in Sources */,
+				0786D0B2237AF8C700D6BEB1 /* NetworkManager.swift in Sources */,
 				070CE89F237C4A5300610882 /* MeteoriteListDataSource.swift in Sources */,
 				0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */,
 				070B515C237C6B8300262BDD /* Layout.swift in Sources */,

@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol InformationViewDelegate: AnyObject {
+
+    func informationViewDelegateListViewTappedButton(_ view: InformationView, with button: UIButton)
+}
+
 final class InformationView: UIView {
+
+    weak var delegate: InformationViewDelegate?
 
     private lazy var loadingIndicatorView: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
@@ -50,6 +57,7 @@ final class InformationView: UIView {
         button.layer.cornerRadius = Layout.roundCorners.medium.rawValue
         button.setBackgroundColor(CustomColor.color(.darkRed), forState: .highlighted)
         button.setTitleColor(CustomColor.color(.disabled), for: .highlighted)
+        button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -122,6 +130,11 @@ final class InformationView: UIView {
             width: maxLabelWidth,
             height: Layout.prefferedButtonHeight
         )
+    }
+
+    @objc private func buttonTapped(_ sender: UIButton) {
+
+        delegate?.informationViewDelegateListViewTappedButton(self, with: sender)
     }
 
     func configure(header: String, message: String?, image: UIImage? = nil, buttonTitle: String? = nil) {

@@ -1,5 +1,5 @@
 //
-//  APIDataLoader.swift
+//  NetworkManager.swift
 //  FallenMeteorite
 //
 //  Created by Michal Martinů on 12/11/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class NetworkingManager {
+final class NetworkManager {
 
     enum Result {
         case success([Meteorite])

@@ -190,58 +190,10 @@
             filePath = "FallenMeteorite/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "AppCoordinator"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "79E00C5C-15C8-40F8-A2D1-ED4688800C98"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallenMeteorite/AppCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "handleNetworkResult(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "79E00C5C-15C8-40F8-A2D1-ED4688800C98 - 7ddc78ab246c1ade"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FallenMeteorite.AppCoordinator.(handleNetworkResult in _B793442072312B1D10FF39697BF93FD2)(FallenMeteorite.NetworkingManager.Result) -&gt; ()"
-                  moduleName = "FallenMeteorite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michalmartinu/Documents/GitHub/FallenMeteorite/FallenMeteorite/AppCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "79E00C5C-15C8-40F8-A2D1-ED4688800C98 - 7ddc78ab246c1ade"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FallenMeteorite.AppCoordinator.(handleNetworkResult in _B793442072312B1D10FF39697BF93FD2)(FallenMeteorite.NetworkingManager.Result) -&gt; ()"
-                  moduleName = "FallenMeteorite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michalmartinu/Documents/GitHub/FallenMeteorite/FallenMeteorite/AppCoordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "188">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -256,24 +208,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "MeteoriteListView"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7D98376C-AD65-4F14-B069-BC9BFDBF8319"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallenMeteorite/View/MeteoriteListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "MeteoriteListView"
-            landmarkType = "3">
+            landmarkName = "informationViewContentType(_:message:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -288,7 +224,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
             endingLineNumber = "74"
-            landmarkName = "informationViewContentType(_:)"
+            landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

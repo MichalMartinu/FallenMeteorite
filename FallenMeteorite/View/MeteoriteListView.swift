@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol MeteoriteListViewDelegate: AnyObject {
+
+    func meteoriteListViewTappedButton(_ view: MeteoriteListView, with button: UIButton)
+}
+
 final class MeteoriteListView: UIView {
 
     enum InformationContentType {
@@ -18,6 +23,8 @@ final class MeteoriteListView: UIView {
         case hidden
     }
 
+    weak var delegate: MeteoriteListViewDelegate?
+
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorColor = CustomColor.color(.lightGray)
@@ -26,7 +33,11 @@ final class MeteoriteListView: UIView {
         return tableView
     }()
 
-    private let informationView = InformationView()
+    private lazy var informationView: InformationView = {
+        let view = InformationView()
+        view.delegate = self
+        return view
+    }()
 
     private let loadingHeaderText = "Meteorites are loading"
     private let loadingMessageText = "While this app is loading I would like to tell you:\nHave a good day! :)"
@@ -97,32 +108,11 @@ final class MeteoriteListView: UIView {
                 )
         }
     }
+}
 
-  /*  func informationViewWithButtonContentType(_ contentType: InformationWithButtonContentType, message: String? = nil) {
-        
-        informationView.isHidden = true
+extension MeteoriteListView: InformationViewDelegate {
 
-        switch contentType {
-            case .hidden:
-                informationViewWithButton.isHidden = true
-            case .offline:
-                informationViewWithButton.isHidden = false
-                informationViewWithButton.configure(
-                    header: offlineHeaderText,
-                    message: offlineMessageText,
-                    image: offlineImage,
-                    buttonTitle: tryAgainButtonText
-                )
-            case .error:
-                informationView.isHidden = false
-                informationViewWithButton.configure(
-                    header: errorHeaderText,
-                    message: message,
-                    image: errorImage,
-                    buttonTitle: tryAgainButtonText
-                )
-
-        }
-    }*/
-
+    func informationViewDelegateListViewTappedButton(_ view: InformationView, with button: UIButton) {
+        delegate?.meteoriteListViewTappedButton(self, with: button)
+    }
 }

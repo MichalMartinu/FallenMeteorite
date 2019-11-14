@@ -10,7 +10,7 @@ import UIKit
 
 final class MeteoriteListDataSource: NSObject, UITableViewDataSource {
 
-    private var meteorites = [CDMeteorite]()
+    private(set) var meteorites = [CDMeteorite]()
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return meteorites.count
