@@ -16,6 +16,8 @@ enum CustomColor {
         case disabled = "font-disabled"
         case background = "background"
         case lightGray = "light-gray"
+        case yellow = "yellow"
+        case brown = "brown"
     }
 
     static func color(_ customColor: CustomColorString) -> UIColor {

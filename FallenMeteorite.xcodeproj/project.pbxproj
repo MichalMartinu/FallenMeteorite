@@ -11,6 +11,7 @@
 		070B515C237C6B8300262BDD /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B515B237C6B8300262BDD /* Layout.swift */; };
 		070B515E237C7E2E00262BDD /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B515D237C7E2E00262BDD /* InformationView.swift */; };
 		070B5160237C929D00262BDD /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B515F237C929D00262BDD /* CustomColor.swift */; };
+		070B5162237CA41100262BDD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5161237CA41100262BDD /* Formatter.swift */; };
 		070CE89D237C495B00610882 /* MeteoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE89C237C495B00610882 /* MeteoriteListView.swift */; };
 		070CE89F237C4A5300610882 /* MeteoriteListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */; };
 		070CE8A1237C5D4400610882 /* MeteoriteItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */; };
@@ -34,6 +35,7 @@
 		070B515B237C6B8300262BDD /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		070B515D237C7E2E00262BDD /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		070B515F237C929D00262BDD /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		070B5161237CA41100262BDD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		070CE89C237C495B00610882 /* MeteoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListView.swift; sourceTree = "<group>"; };
 		070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListDataSource.swift; sourceTree = "<group>"; };
 		070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				070B5159237C69AD00262BDD /* Images.swift */,
 				070B515B237C6B8300262BDD /* Layout.swift */,
 				070B515F237C929D00262BDD /* CustomColor.swift */,
+				070B5161237CA41100262BDD /* Formatter.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				070CE8A1237C5D4400610882 /* MeteoriteItemTableViewCell.swift in Sources */,
+				070B5162237CA41100262BDD /* Formatter.swift in Sources */,
 				0786D0A9237AE73400D6BEB1 /* AppCoordinator.swift in Sources */,
 				0786D0B2237AF8C700D6BEB1 /* NetworkingManager.swift in Sources */,
 				070CE89F237C4A5300610882 /* MeteoriteListDataSource.swift in Sources */,

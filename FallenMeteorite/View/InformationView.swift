@@ -19,7 +19,7 @@ final class InformationView: UIView {
     private let informationLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10)
-        label.textColor = CustomColor.color(.mediumEmphasis)
+        label.textColor = CustomColor.color(.yellow)
         return label
     }()
 

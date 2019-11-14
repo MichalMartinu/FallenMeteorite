@@ -89,7 +89,9 @@ final class MeteoriteItemTableViewCell: UITableViewCell {
         nameLabel.text = meteorite.name
 
         yearInformationView.configure(String(meteorite.year), backgroundColor: CustomColor.color(.lightGray))
-        weightInformationView.configure("\(String(meteorite.mass)) g", backgroundColor: CustomColor.color(.lightGray))
+        weightInformationView.configure(
+            "\(Formatter.formatWeight(meteorite.mass)) g", backgroundColor: CustomColor.color(.lightGray)
+        )
 
         layoutIfNeeded()
         setNeedsLayout()
