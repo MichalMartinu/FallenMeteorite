@@ -34,6 +34,6 @@ extension UserDefaults {
             self.set(true, forKey: hasBeenLaunchedBefore)
         }
         
-        return true
+        return isFirstLaunch
     }
 }

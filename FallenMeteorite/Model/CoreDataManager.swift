@@ -29,6 +29,7 @@ final class CoreDataManager {
             savedMeteorite.fall = meteorite.fall
             savedMeteorite.id = meteorite.id
             savedMeteorite.mass = Double(meteorite.mass) ?? 0.0
+            savedMeteorite.recclass = meteorite.recclass
             savedMeteorite.year = Int64(DateManager.yearFromJson(meteorite.year ?? "")) ?? 0
 
             if

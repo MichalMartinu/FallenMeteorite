@@ -50,7 +50,7 @@ final class MeteoriteListView: UIView {
     private let errorHeaderText = "Error when loading data"
 
     private let offlineImage = Images.image(.meteoriteIcon)
-    private let offlineHeaderText = "Your are Offline"
+    private let offlineHeaderText = "You are Offline"
     private let offlineMessageText = "Please check your internet connection and try your request again."
 
     private let tryAgainButtonText = "Try again"

@@ -15,9 +15,9 @@ enum CustomColor {
         case mediumEmphasis = "font-medium-emphasis"
         case disabled = "font-disabled"
         case background = "background"
+        case backgroundGray = "background-gray"
         case lightGray = "light-gray"
         case yellow = "yellow"
-        case brown = "brown"
         case red = "red"
         case darkRed = "dark-red"
     }

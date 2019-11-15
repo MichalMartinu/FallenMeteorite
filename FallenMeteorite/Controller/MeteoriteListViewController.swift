@@ -12,6 +12,7 @@ protocol MeteoriteListViewControllerDelegate: AnyObject {
 
     func meteoriteListViewControllerNeedsUpdateData(_ controller: MeteoriteListViewController)
     func meteoriteListViewControllerDidLoad(_ controller: MeteoriteListViewController)
+    func meteoriteListViewControllerTapped(_ controller: MeteoriteListViewController, meteorite: CDMeteorite)
 }
 
 final class MeteoriteListViewController: UIViewController {
@@ -93,6 +94,12 @@ extension MeteoriteListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return MeteoriteItemTableViewCell.preferredHeight
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        delegate?.meteoriteListViewControllerTapped(self, meteorite: dataSource.meteorites[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -19,4 +19,8 @@ enum Formatter {
         formatter.numberStyle = .decimal
         return formatter.string(from: weight as NSNumber) ?? "n/a"
     }
+
+    static func formatCoordinate(_ coordinate: Double) -> String {
+        return coordinate == 0.0 ? "Unknown" : String(coordinate)
+    }
 }

@@ -29,8 +29,9 @@ enum Layout {
         /// 4
         case medium = 8
         /// 16
-        case large = 16
+        case large = 12
     }
 
-    static let prefferedButtonHeight: CGFloat = 44
+    static let preferredButtonHeight: CGFloat = 44
+    static let preferredPadding: CGFloat = 16
 }

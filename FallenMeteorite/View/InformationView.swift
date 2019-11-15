@@ -56,6 +56,7 @@ final class InformationView: UIView {
         button.backgroundColor = CustomColor.color(.red)
         button.layer.cornerRadius = Layout.roundCorners.medium.rawValue
         button.setBackgroundColor(CustomColor.color(.darkRed), forState: .highlighted)
+        button.setTitleColor(CustomColor.color(.highEmphasis), for: .normal)
         button.setTitleColor(CustomColor.color(.disabled), for: .highlighted)
         button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         return button
@@ -82,7 +83,8 @@ final class InformationView: UIView {
 
         let contentViewFrame: CGFloat = 64
 
-        let maxLabelWidth: CGFloat = 280
+        let maxLabelWidth: CGFloat = 300
+        let buttonWidth: CGFloat = 280
         let expectedLabelSize = CGSize(width: maxLabelWidth, height: .greatestFiniteMagnitude)
 
         let messageHeaderLabelSize = messageHeaderLabel.sizeThatFits(expectedLabelSize)
@@ -122,13 +124,13 @@ final class InformationView: UIView {
             height: messageLabelSize.height
         )
 
-        let minXbutton = (frame.width - maxLabelWidth) / 2
+        let minXbutton = (frame.width - buttonWidth) / 2
 
         button.frame = CGRect(
             x: minXbutton,
             y: messageLabel.frame.maxY + buttonSpacing,
-            width: maxLabelWidth,
-            height: Layout.prefferedButtonHeight
+            width: buttonWidth,
+            height: Layout.preferredButtonHeight
         )
     }
 

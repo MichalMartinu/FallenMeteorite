@@ -70,7 +70,6 @@ final class AppCoordinator: Coordinator {
                     case .success(let meteorites):
                         let savedMeteorites = self.updateData(meteorites)
                         self.delegate?.appCoordinator(self, upateMeteorites: savedMeteorites)
-                        self.meteoriteListViewController.present(FirstLaunchInformationViewController(), animated: true, completion: nil)
                     case .error(let error):
                         self.delegate?.appCoordintorSetErrorState(self, message: error)
                     case .offline:
@@ -100,19 +99,22 @@ extension AppCoordinator: MeteoriteListViewControllerDelegate {
 
         if isFirstLaunch {
 
+            isFirstLaunch = false
+
             firstLaunchInformationViewController = FirstLaunchInformationViewController()
 
             guard let firstLaunchInformationViewController = firstLaunchInformationViewController else { return }
 
             firstLaunchInformationViewController.delegate = self
 
-            DispatchQueue.main.async {
-                // Removing DispatchQueue.main.async would cause irregular warning
-                // I think that is caused by quick launch of application
-                // Despite this fact any efect on functuality was not proved
-                self.navigationController.present(firstLaunchInformationViewController, animated: true, completion: nil)
-            }
+            navigationController.present(firstLaunchInformationViewController, animated: true, completion: nil)
         }
+    }
+
+    func meteoriteListViewControllerTapped(_ controller: MeteoriteListViewController, meteorite: CDMeteorite) {
+
+        let detailViewController = MeteoriteDetailViewController(meteorite: meteorite)
+        navigationController.present(detailViewController, animated: true, completion: nil)
     }
 }
 
@@ -120,7 +122,7 @@ extension AppCoordinator: FirstLaunchInformationViewControllerDelegate {
 
     func firstLaunchInformationViewControllerDismiss(_ controller: FirstLaunchInformationViewController) {
 
-        navigationController.dismiss(animated: true, completion: nil)
+        firstLaunchInformationViewController?.dismiss(animated: true, completion: nil)
     }
 
     func firstLaunchInformationViewControllerDidDissapear(_ controller: FirstLaunchInformationViewController) {

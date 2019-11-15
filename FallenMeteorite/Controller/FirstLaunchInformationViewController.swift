@@ -31,7 +31,8 @@ final class FirstLaunchInformationViewController: UIViewController {
 
         rootView.delegate = self
         rootView.configure(header: header, message: message, image: image, buttonTitle: buttonTitle)
-
+        rootView.backgroundColor = CustomColor.color(.backgroundGray)
+        
         view = rootView
     }
 
