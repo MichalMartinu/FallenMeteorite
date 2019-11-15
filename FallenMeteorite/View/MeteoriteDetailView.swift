@@ -27,22 +27,23 @@ final class MeteoriteDetailView: UIView {
 
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView()
-        mapView.layer.cornerRadius = Layout.roundCorners.large.rawValue
+        mapView.layer.cornerRadius = Layout.cornerRadius.large.rawValue
         mapView.isZoomEnabled = false
         mapView.isScrollEnabled = false
         mapView.isPitchEnabled = false
         mapView.isRotateEnabled = false
         mapView.mapType = .hybrid
         mapView.delegate = self
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mapViewTapped(_:)))
-        mapView.addGestureRecognizer(gestureRecognizer)
+        mapView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(mapViewTapped(_:)))
+        )
         return mapView
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 32)
-        label.textColor = CustomColor.color(.highEmphasis)
+        label.textColor = CustomColor.color(.inkLight)
         return label
     }()
 
@@ -54,7 +55,7 @@ final class MeteoriteDetailView: UIView {
     }()
 
     private let imageView: UIImageView = {
-        let imageView = Images.imageView(.meteoriteIcon)
+        let imageView = Images.imageView(.meteorite)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

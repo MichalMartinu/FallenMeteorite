@@ -30,7 +30,7 @@ final class CoreDataManager {
             savedMeteorite.id = meteorite.id
             savedMeteorite.mass = Double(meteorite.mass) ?? 0.0
             savedMeteorite.recclass = meteorite.recclass
-            savedMeteorite.year = Int64(DateManager.yearFromJson(meteorite.year ?? "")) ?? 0
+            savedMeteorite.year = Int64(Formatter.yearFromJson(meteorite.year ?? "")) ?? 0
 
             if
             let latitude = meteorite.geolocation?.latitude,

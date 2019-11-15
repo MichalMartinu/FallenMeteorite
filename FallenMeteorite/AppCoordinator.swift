@@ -30,40 +30,28 @@ final class AppCoordinator: Coordinator {
         return controller
     }()
 
-    private let userDefaults = UserDefaults()
     private let coreDataManager = CoreDataManager(context: AppDelegate.viewContext)
-    private let networkingManager = NetworkManager()
+    private let networkngManager = NetworkManager()
 
     private var firstLaunchInformationViewController: FirstLaunchInformationViewController?
 
     private var isFirstLaunch: Bool
 
-    private let currentDate = Date()
-
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        isFirstLaunch = userDefaults.isFirstLaunch
+        isFirstLaunch = UserDefaults.isFirstLaunch
     }
 
     func start() {
 
         navigationController.viewControllers = [meteoriteListViewController]
         delegate?.appCoordinatorSetLoadingState(self)
-
-        if let lastUpdateDate = userDefaults.lastUpdateDate() {
-            delegate?.appCoordinator(self, upateMeteorites: coreDataManager.fetchAllMeteoritesSorted())
-
-            if !DateManager.checkIfDate(currentDate, isInSameDayAs: lastUpdateDate) {
-                fetchNetworkData()
-            }
-        } else {
-            fetchNetworkData()
-        }
+        delegate?.appCoordinator(self, upateMeteorites: coreDataManager.fetchAllMeteoritesSorted())
     }
 
-    private func fetchNetworkData() {
+    func fetchNetworkData() {
 
-        networkingManager.loadData { result in
+        networkngManager.loadData { result in
 
             DispatchQueue.main.async {
                 switch result {
@@ -83,7 +71,7 @@ final class AppCoordinator: Coordinator {
         
         coreDataManager.deleteAllMeteorites()
         let meteorites = coreDataManager.saveMeteorites(meteorites)
-        userDefaults.saveLastUpdateDate(DateManager.currentDate())
+        UserDefaults.saveLastUpdateDate(Date())
         return meteorites
     }
 }

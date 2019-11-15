@@ -12,8 +12,8 @@ enum Images {
 
     enum CustomImage: String {
 
-        case meteoriteIcon = "meteorite-icon"
-        case meteoriteLogo = "meteorite-navbar"
+        case meteorite = "Meteorite"
+        case meteoriteLogo = "Meteorite-logo"
     }
 
     static func image(_ customImage: CustomImage) -> UIImage? {

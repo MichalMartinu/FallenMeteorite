@@ -55,6 +55,7 @@ final class ViewWithLabel: UIView {
         informationLabel.text = text
         self.backgroundColor = backgroundColor
 
+        layoutIfNeeded()
         setNeedsLayout()
     }
 }

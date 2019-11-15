@@ -11,15 +11,15 @@ import UIKit
 enum CustomColor {
 
     enum CustomColorString: String {
-        case highEmphasis = "font-high-emphasis"
-        case mediumEmphasis = "font-medium-emphasis"
-        case disabled = "font-disabled"
-        case background = "background"
-        case backgroundGray = "background-gray"
-        case lightGray = "light-gray"
-        case yellow = "yellow"
-        case red = "red"
-        case darkRed = "dark-red"
+        case inkDark = "Ink-dark"
+        case inkLight = "Ink-light"
+        case inkDisabled = "Ink-disabled"
+        case background = "Background"
+        case backgroundGray = "Background-gray"
+        case lightGray = "Light-gray"
+        case yellow = "Yellow"
+        case red = "Red"
+        case darkRed = "Dark-red"
     }
 
     static func color(_ customColor: CustomColorString) -> UIColor {

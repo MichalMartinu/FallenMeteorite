@@ -33,7 +33,7 @@ final class InformationView: UIView {
 
     private let messageHeaderLabel: UILabel = {
         let label = UILabel()
-        label.textColor = CustomColor.color(.highEmphasis)
+        label.textColor = CustomColor.color(.inkLight)
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -43,7 +43,7 @@ final class InformationView: UIView {
 
     private let messageLabel: UILabel = {
         let label = UILabel()
-        label.textColor = CustomColor.color(.mediumEmphasis)
+        label.textColor = CustomColor.color(.inkDark)
         label.font = UIFont.systemFont(ofSize: 12)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -54,10 +54,10 @@ final class InformationView: UIView {
     let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = CustomColor.color(.red)
-        button.layer.cornerRadius = Layout.roundCorners.medium.rawValue
+        button.layer.cornerRadius = Layout.cornerRadius.medium.rawValue
         button.setBackgroundColor(CustomColor.color(.darkRed), forState: .highlighted)
-        button.setTitleColor(CustomColor.color(.highEmphasis), for: .normal)
-        button.setTitleColor(CustomColor.color(.disabled), for: .highlighted)
+        button.setTitleColor(CustomColor.color(.inkLight), for: .normal)
+        button.setTitleColor(CustomColor.color(.inkDisabled), for: .highlighted)
         button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         return button
     }()

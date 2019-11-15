@@ -10,17 +10,19 @@ import UIKit
 
 final class LabelWithDescription: UIView {
 
+    private static let fontSize: CGFloat = 12
+
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.textColor = CustomColor.color(.mediumEmphasis)
+        label.font = UIFont.boldSystemFont(ofSize: fontSize)
+        label.textColor = CustomColor.color(.inkDark)
         return label
     }()
 
     private let textLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = CustomColor.color(.mediumEmphasis)
+        label.font = UIFont.systemFont(ofSize: fontSize)
+        label.textColor = CustomColor.color(.inkDark)
         return label
     }()
 

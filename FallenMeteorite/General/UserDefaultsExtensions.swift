@@ -14,24 +14,24 @@ enum DefaultsKeys: String {
 
 extension UserDefaults {
 
-    func saveLastUpdateDate(_ date: Date) {
+    static func saveLastUpdateDate(_ date: Date) {
 
-        self.set(date, forKey: DefaultsKeys.lastUpdateDate.rawValue)
+        UserDefaults.standard.set(date, forKey: DefaultsKeys.lastUpdateDate.rawValue)
     }
 
-    func lastUpdateDate() -> Date? {
+    static func lastUpdateDate() -> Date? {
         
-        return self.object(forKey: DefaultsKeys.lastUpdateDate.rawValue) as? Date
+        return UserDefaults.standard.object(forKey: DefaultsKeys.lastUpdateDate.rawValue) as? Date
     }
 
-    var isFirstLaunch: Bool {
+    static var isFirstLaunch: Bool {
 
         let hasBeenLaunchedBefore = "hasBeenLaunchedBefore"
 
-        let isFirstLaunch = !self.bool(forKey: hasBeenLaunchedBefore)
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunchedBefore)
 
         if isFirstLaunch {
-            self.set(true, forKey: hasBeenLaunchedBefore)
+            UserDefaults.standard.set(true, forKey: hasBeenLaunchedBefore)
         }
         
         return isFirstLaunch

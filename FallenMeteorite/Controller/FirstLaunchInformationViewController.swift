@@ -23,7 +23,7 @@ final class FirstLaunchInformationViewController: UIViewController {
     private let header = "Welcome to fallen meteorite"
     private let message = "This application would show you meteorites fallen on Earth from year 2011 sorted by weigh descending. Application updates data automatically."
     private let buttonTitle = "That is cool"
-    private let image = Images.image(.meteoriteIcon)
+    private let image = Images.image(.meteorite)
 
 
     override func loadView() {

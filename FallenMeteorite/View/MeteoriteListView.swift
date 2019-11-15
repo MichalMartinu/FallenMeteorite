@@ -42,14 +42,14 @@ final class MeteoriteListView: UIView {
     private let loadingHeaderText = "Meteorites are loading"
     private let loadingMessageText = "While this app is loading I would like to tell you:\nHave a good day! :)"
 
-    private let emptyImage = Images.image(.meteoriteIcon)
+    private let emptyImage = Images.image(.meteorite)
     private let emptyHeaderText = "There are not meteorites to show"
     private let emptyMessageText = "We cannot find any meteorites in database. :("
 
-    private let errorImage = Images.image(.meteoriteIcon)
+    private let errorImage = Images.image(.meteorite)
     private let errorHeaderText = "Error when loading data"
 
-    private let offlineImage = Images.image(.meteoriteIcon)
+    private let offlineImage = Images.image(.meteorite)
     private let offlineHeaderText = "You are Offline"
     private let offlineMessageText = "Please check your internet connection and try your request again."
 

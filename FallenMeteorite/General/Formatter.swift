@@ -10,6 +10,12 @@ import Foundation
 
 enum Formatter {
 
+    static func yearFromJson(_ jsonString: String) -> String {
+
+        let index = jsonString.index(jsonString.startIndex, offsetBy: 4)
+        return String(jsonString[..<index])
+    }
+
     static func formatWeight(_ weight: Double) -> String {
 
         let formatter = NumberFormatter()

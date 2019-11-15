@@ -16,12 +16,12 @@ final class MeteoriteItemTableViewCell: UITableViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = CustomColor.color(.highEmphasis)
+        label.textColor = CustomColor.color(.inkLight)
         return label
     }()
 
     private let meteoriteImageView: UIImageView = {
-        let imageView = Images.imageView(.meteoriteIcon)
+        let imageView = Images.imageView(.meteorite)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -35,7 +35,9 @@ final class MeteoriteItemTableViewCell: UITableViewCell {
 
         backgroundColor = CustomColor.color(.background)
 
-        [yearInformationView, weightInformationView].forEach{ $0.layer.cornerRadius = Layout.roundCorners.medium.rawValue }
+        [yearInformationView, weightInformationView].forEach{
+            $0.roundCorners(Layout.cornerRadius.medium.rawValue)
+        }
 
         [nameLabel, meteoriteImageView, yearInformationView, weightInformationView].forEach{ addSubview($0) }
     }

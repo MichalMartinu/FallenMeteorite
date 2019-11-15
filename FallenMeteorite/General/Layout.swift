@@ -22,7 +22,7 @@ enum Layout {
         case huge = 24
     }
 
-    enum roundCorners: CGFloat {
+    enum cornerRadius: CGFloat {
 
         /// 2
         case small = 4
