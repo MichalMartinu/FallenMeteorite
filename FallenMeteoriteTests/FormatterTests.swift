@@ -38,11 +38,11 @@ class FormatterTests: XCTestCase {
 
     func testDoubleToString() {
 
-        XCTAssertEqual(Formatter.doubleToString(233.212421), "233,212421")
+        XCTAssertEqual(Formatter.doubleToString(233.212421), "233.212421")
     }
 
     func testDoubleToStringWithMaxFractionDigits() {
 
-        XCTAssertEqual(Formatter.doubleToString(233.212421, maxFractionDigits: 2), "233,21")
+        XCTAssertEqual(Formatter.doubleToString(233.212421, maxFractionDigits: 2), "233.21")
     }
 }

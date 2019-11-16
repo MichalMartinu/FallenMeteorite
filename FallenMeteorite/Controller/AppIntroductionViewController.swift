@@ -1,5 +1,5 @@
 //
-//  FirstLaunchInfromationViewController.swift
+//  AppIntroductionViewController.swift
 //  FallenMeteorite
 //
 //  Created by Michal Martinů on 14/11/2019.

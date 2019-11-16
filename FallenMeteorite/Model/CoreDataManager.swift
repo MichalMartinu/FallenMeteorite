@@ -14,6 +14,7 @@ final class CoreDataManager {
     private let context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {
+        
         self.context = context
     }
 

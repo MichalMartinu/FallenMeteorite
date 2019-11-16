@@ -50,6 +50,7 @@ final class MeteoriteListViewController: UIViewController {
 
         navigationController?.navigationBar.barStyle = .black
         navigationItem.titleView = meteoriteLogoImageView
+        
         delegate?.meteoriteListViewControllerDidLoad(self)
     }
 }

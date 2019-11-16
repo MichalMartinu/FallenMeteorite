@@ -92,7 +92,8 @@ final class MeteoriteItemTableViewCell: UITableViewCell {
 
         yearInformationView.configure(String(meteorite.year), backgroundColor: CustomColor.color(.lightGray))
         weightInformationView.configure(
-            "\(Formatter.doubleToString(meteorite.mass, maxFractionDigits: 2)) g", backgroundColor: CustomColor.color(.lightGray)
+            "\(Formatter.doubleToString(meteorite.mass, maxFractionDigits: 2)) g",
+            backgroundColor: CustomColor.color(.lightGray)
         )
 
         layoutIfNeeded()

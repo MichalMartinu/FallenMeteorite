@@ -15,7 +15,7 @@ enum Formatter {
         var string = jsonString
 
         if let range = jsonString.range(of: "-") {
-          string.removeSubrange(range.lowerBound..<jsonString.endIndex)
+          string.removeSubrange(range.lowerBound ..< jsonString.endIndex)
         }
 
         return string
