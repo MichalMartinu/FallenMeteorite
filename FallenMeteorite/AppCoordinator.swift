@@ -17,7 +17,7 @@ protocol AppCoordinatorDelegate: AnyObject {
     func appCoordintorSetErrorState(_ coordinator: AppCoordinator, message: String)
 }
 
-final class AppCoordinator: Coordinator {
+final class AppCoordinator: Coordinator, NetworkManagerAccesing {
 
     var navigationController: UINavigationController
 
@@ -31,32 +31,35 @@ final class AppCoordinator: Coordinator {
     }()
 
     private let coreDataManager = CoreDataManager(context: AppDelegate.viewContext)
-    private let networkngManager = NetworkManager()
 
     private var firstLaunchInformationViewController: FirstLaunchInformationViewController?
 
-    private var isFirstLaunch: Bool
-
     init(navigationController: UINavigationController) {
+
         self.navigationController = navigationController
-        isFirstLaunch = UserDefaults.isFirstLaunch
     }
 
     func start() {
 
         navigationController.viewControllers = [meteoriteListViewController]
         delegate?.appCoordinatorSetLoadingState(self)
-        delegate?.appCoordinator(self, upateMeteorites: coreDataManager.fetchAllMeteoritesSorted())
+
+        if UserDefaultsConfig.lastUpadateDate != nil {
+            delegate?.appCoordinator(self, upateMeteorites: coreDataManager.fetchAllMeteoritesSorted())
+        }
     }
 
     func fetchNetworkData() {
 
-        networkngManager.loadData { result in
+        networkManager.loadData { result in
 
             DispatchQueue.main.async {
+
                 switch result {
                     case .success(let meteorites):
                         let savedMeteorites = self.updateData(meteorites)
+                        let currentDate = Date()
+                        UserDefaultsConfig.lastUpadateDate = currentDate
                         self.delegate?.appCoordinator(self, upateMeteorites: savedMeteorites)
                     case .error(let error):
                         self.delegate?.appCoordintorSetErrorState(self, message: error)
@@ -70,8 +73,9 @@ final class AppCoordinator: Coordinator {
     private func updateData(_ meteorites: [Meteorite]) -> [CDMeteorite] {
         
         coreDataManager.deleteAllMeteorites()
+
         let meteorites = coreDataManager.saveMeteorites(meteorites)
-        UserDefaults.saveLastUpdateDate(Date())
+
         return meteorites
     }
 }
@@ -85,9 +89,7 @@ extension AppCoordinator: MeteoriteListViewControllerDelegate {
 
     func meteoriteListViewControllerDidLoad(_ controller: MeteoriteListViewController) {
 
-        if isFirstLaunch {
-
-            isFirstLaunch = false
+        if !UserDefaultsConfig.hasSeenAppIntroduction {
 
             firstLaunchInformationViewController = FirstLaunchInformationViewController()
 
@@ -96,6 +98,8 @@ extension AppCoordinator: MeteoriteListViewControllerDelegate {
             firstLaunchInformationViewController.delegate = self
 
             navigationController.present(firstLaunchInformationViewController, animated: true, completion: nil)
+
+            UserDefaultsConfig.hasSeenAppIntroduction = true
         }
     }
 

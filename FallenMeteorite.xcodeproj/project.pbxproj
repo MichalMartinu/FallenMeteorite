@@ -13,7 +13,7 @@
 		070B5160237C929D00262BDD /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B515F237C929D00262BDD /* CustomColor.swift */; };
 		070B5162237CA41100262BDD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5161237CA41100262BDD /* Formatter.swift */; };
 		070B5164237D559600262BDD /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5163237D559600262BDD /* InformationView.swift */; };
-		070B5168237D827C00262BDD /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5167237D827C00262BDD /* UIExtensions.swift */; };
+		070B5168237D827C00262BDD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B5167237D827C00262BDD /* UIView+Extensions.swift */; };
 		070CE89D237C495B00610882 /* MeteoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE89C237C495B00610882 /* MeteoriteListView.swift */; };
 		070CE89F237C4A5300610882 /* MeteoriteListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */; };
 		070CE8A1237C5D4400610882 /* MeteoriteItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */; };
@@ -21,7 +21,8 @@
 		0724C7D9237DDDAE00F47D91 /* MeteoriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7D8237DDDAE00F47D91 /* MeteoriteDetailViewController.swift */; };
 		0724C7DD237EA8CA00F47D91 /* LabelWithDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7DC237EA8CA00F47D91 /* LabelWithDescription.swift */; };
 		0724C7DF237EA95D00F47D91 /* MeteoriteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7DE237EA95D00F47D91 /* MeteoriteDetailView.swift */; };
-		075FE2B7237C1F7500DC8681 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE2B6237C1F7500DC8681 /* UserDefaultsExtensions.swift */; };
+		075FE2B7237C1F7500DC8681 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE2B6237C1F7500DC8681 /* UserDefault.swift */; };
+		07675743238016F0004BEE07 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07675742238016F0004BEE07 /* UIButton+Extensions.swift */; };
 		0786D091237AD7E800D6BEB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D090237AD7E800D6BEB1 /* AppDelegate.swift */; };
 		0786D093237AD7E800D6BEB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */; };
 		0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D094237AD7E800D6BEB1 /* MeteoriteListViewController.swift */; };
@@ -33,6 +34,7 @@
 		0786D0B4237B038400D6BEB1 /* Meteorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B3237B038400D6BEB1 /* Meteorite.swift */; };
 		0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B5237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld */; };
 		0786D0E2237B224C00D6BEB1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */; };
+		07D82EB32380492D00944BD2 /* NetworkManagerAccesing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D82EB22380492D00944BD2 /* NetworkManagerAccesing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +44,7 @@
 		070B515F237C929D00262BDD /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		070B5161237CA41100262BDD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		070B5163237D559600262BDD /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
-		070B5167237D827C00262BDD /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		070B5167237D827C00262BDD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		070CE89C237C495B00610882 /* MeteoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListView.swift; sourceTree = "<group>"; };
 		070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListDataSource.swift; sourceTree = "<group>"; };
 		070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -50,7 +52,8 @@
 		0724C7D8237DDDAE00F47D91 /* MeteoriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteDetailViewController.swift; sourceTree = "<group>"; };
 		0724C7DC237EA8CA00F47D91 /* LabelWithDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithDescription.swift; sourceTree = "<group>"; };
 		0724C7DE237EA95D00F47D91 /* MeteoriteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteDetailView.swift; sourceTree = "<group>"; };
-		075FE2B6237C1F7500DC8681 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		075FE2B6237C1F7500DC8681 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		07675742238016F0004BEE07 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		0786D08D237AD7E800D6BEB1 /* FallenMeteorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallenMeteorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0786D090237AD7E800D6BEB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		0786D0B3237B038400D6BEB1 /* Meteorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteorite.swift; sourceTree = "<group>"; };
 		0786D0B6237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FallenMeteorite.xcdatamodel; sourceTree = "<group>"; };
 		0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		07D82EB22380492D00944BD2 /* NetworkManagerAccesing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAccesing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,15 +84,25 @@
 		075FE2AF237C123D00DC8681 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				075FE2B6237C1F7500DC8681 /* UserDefaultsExtensions.swift */,
+				075FE2B6237C1F7500DC8681 /* UserDefault.swift */,
 				0786D0AA237AE73900D6BEB1 /* Coordinator.swift */,
 				070B5159237C69AD00262BDD /* Images.swift */,
 				070B515B237C6B8300262BDD /* Layout.swift */,
 				070B515F237C929D00262BDD /* CustomColor.swift */,
 				070B5161237CA41100262BDD /* Formatter.swift */,
-				070B5167237D827C00262BDD /* UIExtensions.swift */,
+				07D82EB12380491700944BD2 /* Protocols */,
+				07675741238016B5004BEE07 /* Extensions */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		07675741238016B5004BEE07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				070B5167237D827C00262BDD /* UIView+Extensions.swift */,
+				07675742238016F0004BEE07 /* UIButton+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0786D084237AD7E800D6BEB1 = {
@@ -175,6 +189,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		07D82EB12380491700944BD2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				07D82EB22380492D00944BD2 /* NetworkManagerAccesing.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,11 +275,13 @@
 				070CE89F237C4A5300610882 /* MeteoriteListDataSource.swift in Sources */,
 				0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */,
 				070B515C237C6B8300262BDD /* Layout.swift in Sources */,
-				070B5168237D827C00262BDD /* UIExtensions.swift in Sources */,
+				070B5168237D827C00262BDD /* UIView+Extensions.swift in Sources */,
 				0786D0AB237AE73900D6BEB1 /* Coordinator.swift in Sources */,
 				0724C7DD237EA8CA00F47D91 /* LabelWithDescription.swift in Sources */,
-				075FE2B7237C1F7500DC8681 /* UserDefaultsExtensions.swift in Sources */,
+				07D82EB32380492D00944BD2 /* NetworkManagerAccesing.swift in Sources */,
+				075FE2B7237C1F7500DC8681 /* UserDefault.swift in Sources */,
 				0724C7D7237DCEB400F47D91 /* FirstLaunchInformationViewController.swift in Sources */,
+				07675743238016F0004BEE07 /* UIButton+Extensions.swift in Sources */,
 				070B515A237C69AD00262BDD /* Images.swift in Sources */,
 				0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */,
 				0786D091237AD7E800D6BEB1 /* AppDelegate.swift in Sources */,

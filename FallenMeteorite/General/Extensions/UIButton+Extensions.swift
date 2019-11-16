@@ -1,8 +1,8 @@
 //
-//  UIExtensions.swift
+//  UIButton+Extensions.swift
 //  FallenMeteorite
 //
-//  Created by Michal Martinů on 14/11/2019.
+//  Created by Michal Martinů on 16/11/2019.
 //  Copyright © 2019 Michal Martinů. All rights reserved.
 //
 
@@ -25,13 +25,5 @@ extension UIButton {
         UIGraphicsEndImageContext()
 
         setBackgroundImage(colorImage, for: forState)
-    }
-}
-
-extension UIView {
-
-    func roundCorners(_ cornerRadius: CGFloat) {
-
-        layer.cornerRadius = cornerRadius
     }
 }

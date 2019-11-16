@@ -25,7 +25,7 @@ final class MeteoriteDetailView: UIView {
 
     private var orderedViews = [LabelWithDescription]()
 
-    private lazy var mapView: MKMapView = {
+    lazy var mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.layer.cornerRadius = Layout.cornerRadius.large.rawValue
         mapView.isZoomEnabled = false

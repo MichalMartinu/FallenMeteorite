@@ -11,6 +11,7 @@ import UIKit
 enum CustomColor {
 
     enum CustomColorString: String {
+
         case inkDark = "Ink-dark"
         case inkLight = "Ink-light"
         case inkDisabled = "Ink-disabled"
@@ -23,6 +24,7 @@ enum CustomColor {
     }
 
     static func color(_ customColor: CustomColorString) -> UIColor {
+        
         return UIColor(named: customColor.rawValue) ?? UIColor()
     }
 }

@@ -190,8 +190,8 @@
             filePath = "FallenMeteorite/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "init(navigationController:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -231,22 +231,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4BEF33A5-EF91-43A0-9174-4AE4AD33EEE8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallenMeteorite/AppCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "meteoriteListViewControllerDidLoad(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D8B249E4-41CF-406A-A5DB-2C8C84C81D99"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -254,8 +238,8 @@
             filePath = "FallenMeteorite/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "meteoriteListViewControllerTapped(_:meteorite:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +254,8 @@
             filePath = "FallenMeteorite/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "meteoriteListViewControllerDidLoad(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +270,8 @@
             filePath = "FallenMeteorite/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "fetchNetworkData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -295,33 +279,145 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9263B00D-7EBB-4C53-AAAF-FF2548C1EE79"
+            uuid = "178F85E8-18D3-45A5-A962-6E2B462BB4E0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FallenMeteorite/SceneDelegate.swift"
+            filePath = "FallenMeteorite/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "scene(_:willConnectTo:options:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "fetchNetworkData()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "178F85E8-18D3-45A5-A962-6E2B462BB4E0 - 18a89e3bbb3b8f3d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallenMeteorite.AppCoordinator.fetchNetworkData() -&gt; ()"
+                  moduleName = "FallenMeteorite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalmartinu/Documents/GitHub/FallenMeteorite/FallenMeteorite/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "178F85E8-18D3-45A5-A962-6E2B462BB4E0 - 30138cc7e449c79a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FallenMeteorite.NetworkManager.Result) -&gt; () in FallenMeteorite.AppCoordinator.fetchNetworkData() -&gt; ()"
+                  moduleName = "FallenMeteorite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalmartinu/Documents/GitHub/FallenMeteorite/FallenMeteorite/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "68385A4E-2123-4E07-B151-159F02A5AF82"
+            uuid = "E52C46C0-1317-4363-95EB-1A469943CD8D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FallenMeteorite/SceneDelegate.swift"
+            filePath = "FallenMeteorite/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "sceneDidBecomeActive(_:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "fetchNetworkData()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E52C46C0-1317-4363-95EB-1A469943CD8D - 30138cc7e449c79a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FallenMeteorite.NetworkManager.Result) -&gt; () in FallenMeteorite.AppCoordinator.fetchNetworkData() -&gt; ()"
+                  moduleName = "FallenMeteorite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalmartinu/Documents/GitHub/FallenMeteorite/FallenMeteorite/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "E52C46C0-1317-4363-95EB-1A469943CD8D - b5b24855f67512d5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (FallenMeteorite.NetworkManager.Result) -&gt; () in FallenMeteorite.AppCoordinator.fetchNetworkData() -&gt; ()"
+                  moduleName = "FallenMeteorite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalmartinu/Documents/GitHub/FallenMeteorite/FallenMeteorite/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF800F21-E656-4F76-887F-1A3909B64191"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallenMeteorite/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "fetchNetworkData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF800F21-E656-4F76-887F-1A3909B64191 - b5b24855f67512d5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (FallenMeteorite.NetworkManager.Result) -&gt; () in FallenMeteorite.AppCoordinator.fetchNetworkData() -&gt; ()"
+                  moduleName = "FallenMeteorite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalmartinu/Documents/GitHub/FallenMeteorite/FallenMeteorite/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "EF800F21-E656-4F76-887F-1A3909B64191 - b5b24855f67512d5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (FallenMeteorite.NetworkManager.Result) -&gt; () in FallenMeteorite.AppCoordinator.fetchNetworkData() -&gt; ()"
+                  moduleName = "FallenMeteorite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michalmartinu/Documents/GitHub/FallenMeteorite/FallenMeteorite/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

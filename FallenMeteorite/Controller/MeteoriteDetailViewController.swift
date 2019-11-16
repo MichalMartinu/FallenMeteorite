@@ -47,7 +47,7 @@ final class MeteoriteDetailViewController: UIViewController {
                 MeteoriteDetailView.DetailItem(title: "Recctclass", text: meteorite.recclass),
                 MeteoriteDetailView.DetailItem(title: "Mass", text: "\(Formatter.formatWeight(meteorite.mass)) g"),
                 MeteoriteDetailView.DetailItem(title: "Fall", text: meteorite.fall),
-                MeteoriteDetailView.DetailItem(title: "Latitutde", text: Formatter.formatCoordinate(meteorite.latitude)),
+                MeteoriteDetailView.DetailItem(title: "Latitude", text: Formatter.formatCoordinate(meteorite.latitude)),
                 MeteoriteDetailView.DetailItem(title: "Longitude", text: Formatter.formatCoordinate(meteorite.longitude))
             ],
             annotation: annotationFrom(meteorite: meteorite)

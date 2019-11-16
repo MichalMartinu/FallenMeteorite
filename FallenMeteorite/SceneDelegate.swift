@@ -37,10 +37,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidBecomeActive(_ scene: UIScene) {
 
-        if
-        let lastUpdateDate = UserDefaults.lastUpdateDate(),
-        !Calendar.current.isDate(Date(), inSameDayAs: lastUpdateDate) {
-            coordinator?.fetchNetworkData()
+        let currentDate = Date()
+
+        if let lastUpdateDate = UserDefaultsConfig.lastUpadateDate {
+
+            if !Calendar.current.isDate(currentDate, inSameDayAs: lastUpdateDate) {
+                coordinator?.fetchNetworkData()
+            }
         } else {
             coordinator?.fetchNetworkData()
         }

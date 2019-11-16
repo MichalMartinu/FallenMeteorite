@@ -21,7 +21,7 @@ final class FirstLaunchInformationViewController: UIViewController {
     private let rootView = InformationView()
 
     private let header = "Welcome to fallen meteorite"
-    private let message = "This application would show you meteorites fallen on Earth from year 2011 sorted by weigh descending. Application updates data automatically."
+    private let message = "This application would show you fallen meteorites on Earth since year 2011 sorted by weight descending. Application updates data automatically."
     private let buttonTitle = "That is cool"
     private let image = Images.image(.meteorite)
 
