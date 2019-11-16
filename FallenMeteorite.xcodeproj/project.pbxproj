@@ -23,6 +23,7 @@
 		0724C7DF237EA95D00F47D91 /* MeteoriteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7DE237EA95D00F47D91 /* MeteoriteDetailView.swift */; };
 		075FE2B7237C1F7500DC8681 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE2B6237C1F7500DC8681 /* UserDefault.swift */; };
 		07675743238016F0004BEE07 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07675742238016F0004BEE07 /* UIButton+Extensions.swift */; };
+		0783D04E238074B000C8ADC2 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0783D04D238074B000C8ADC2 /* CoreDataTests.swift */; };
 		0786D091237AD7E800D6BEB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D090237AD7E800D6BEB1 /* AppDelegate.swift */; };
 		0786D093237AD7E800D6BEB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */; };
 		0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D094237AD7E800D6BEB1 /* MeteoriteListViewController.swift */; };
@@ -67,6 +68,7 @@
 		0724C7DE237EA95D00F47D91 /* MeteoriteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteDetailView.swift; sourceTree = "<group>"; };
 		075FE2B6237C1F7500DC8681 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		07675742238016F0004BEE07 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		0783D04D238074B000C8ADC2 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		0786D08D237AD7E800D6BEB1 /* FallenMeteorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallenMeteorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0786D090237AD7E800D6BEB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0786D092237AD7E800D6BEB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				07FEACFD238053E500F766F8 /* NetworkTests.swift */,
+				0783D04D238074B000C8ADC2 /* CoreDataTests.swift */,
 				07FEAD0A23805D3300F766F8 /* FormatterTests.swift */,
 				07FEAD0923805BD900F766F8 /* Resources */,
 			);
@@ -379,6 +382,7 @@
 			files = (
 				07FEAD0B23805D3300F766F8 /* FormatterTests.swift in Sources */,
 				07FEACFE238053E500F766F8 /* NetworkTests.swift in Sources */,
+				0783D04E238074B000C8ADC2 /* CoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

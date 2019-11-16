@@ -66,20 +66,17 @@ final class CoreDataManager {
 
     func deleteAllMeteorites() {
 
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDMeteorite")
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-
-        batchDeleteRequest.resultType = .resultTypeObjectIDs
+        let fetchRequest:NSFetchRequest<CDMeteorite> = CDMeteorite.fetchRequest()
 
         do {
-            let result = try context.execute(batchDeleteRequest) as! NSBatchDeleteResult
+            let results = try context.fetch(fetchRequest)
 
-            let changes: [AnyHashable: Any] = [
-                NSDeletedObjectsKey: result.result as! [NSManagedObjectID]
-            ]
+            for object in results {
+                context.delete(object)
+            }
 
-            NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [context])
-
+            try context.save()
+            
         } catch {
             fatalError("Failed to execute request: \(error)")
         }
