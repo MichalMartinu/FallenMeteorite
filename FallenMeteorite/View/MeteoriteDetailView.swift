@@ -54,12 +54,6 @@ final class MeteoriteDetailView: UIView {
         return label
     }()
 
-    private let imageView: UIImageView = {
-        let imageView = Images.imageView(.meteorite)
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-
     private let mapZoom: Double = 10000000
 
     init() {
@@ -67,7 +61,7 @@ final class MeteoriteDetailView: UIView {
 
         backgroundColor = CustomColor.color(.backgroundGray)
 
-        [titleLabel, yearLabel, imageView, mapView].forEach { addSubview($0) }
+        [titleLabel, yearLabel, mapView].forEach { addSubview($0) }
     }
 
     required init?(coder: NSCoder) {
@@ -80,7 +74,6 @@ final class MeteoriteDetailView: UIView {
         let maxViewsWidth = frame.width - 2 * Layout.preferredPadding
         let yearLabelHeight: CGFloat = 20
         let viewsHeight: CGFloat = 16
-        let imageSize: CGFloat = 128
 
         let expectedTitleSize = CGSize(width: maxViewsWidth, height: .greatestFiniteMagnitude)
         let titleLabelSize = titleLabel.sizeThatFits(expectedTitleSize)
@@ -118,26 +111,17 @@ final class MeteoriteDetailView: UIView {
             }
         }
 
-        let maxYBottomViewPostion = orderedViews.last?.frame.maxY ?? yearLabel.frame.maxY
+        let maxYMapViewPosition = orderedViews.last?.frame.maxY ?? yearLabel.frame.maxY
 
-        let minXImagePosition = (frame.width - imageSize) / 2
-        let minYImagePosition = ((frame.height - maxYBottomViewPostion - imageSize) / 2) + maxYBottomViewPostion
-
-        imageView.frame = CGRect(
-            x: minXImagePosition,
-            y: minYImagePosition,
-            width: imageSize,
-            height: imageSize
-        )
         mapView.frame = CGRect(
             x: Layout.preferredPadding,
-            y: maxYBottomViewPostion + Layout.padding.large.rawValue,
+            y: maxYMapViewPosition + Layout.padding.large.rawValue,
             width: maxViewsWidth,
-            height: frame.height - maxYBottomViewPostion - Layout.preferredPadding - Layout.padding.large.rawValue
+            height: frame.height - maxYMapViewPosition - Layout.preferredPadding - Layout.padding.large.rawValue
         )
     }
 
-    func configure(title: String?, year: String?, items: [DetailItem], annotation: MKPointAnnotation?) {
+    func configure(title: String?, year: String?, items: [DetailItem], annotation: MKPointAnnotation) {
 
         titleLabel.text = title
         yearLabel.text = year
@@ -155,20 +139,16 @@ final class MeteoriteDetailView: UIView {
 
         setNeedsLayout()
 
-        if let annotation = annotation {
-            mapView.isHidden = false
-            mapView.addAnnotation(annotation)
+        mapView.addAnnotation(annotation)
 
-            let region = MKCoordinateRegion(
-                center: annotation.coordinate,
-                latitudinalMeters: mapZoom,
-                longitudinalMeters: mapZoom
-            )
+        let region = MKCoordinateRegion(
+            center: annotation.coordinate,
+            latitudinalMeters: mapZoom,
+            longitudinalMeters: mapZoom
+        )
 
-            mapView.setRegion(region, animated: false)
-        } else {
-            mapView.isHidden = true
-        }
+        mapView.setRegion(region, animated: false)
+
     }
 
     @objc private func mapViewTapped(_ gestureReconizer: UITapGestureRecognizer) {

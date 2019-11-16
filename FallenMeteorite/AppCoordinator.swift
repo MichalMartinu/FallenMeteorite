@@ -32,8 +32,6 @@ final class AppCoordinator: Coordinator, NetworkManagerAccesing {
 
     private let coreDataManager = CoreDataManager(context: AppDelegate.viewContext)
 
-    private var firstLaunchInformationViewController: FirstLaunchInformationViewController?
-
     init(navigationController: UINavigationController) {
 
         self.navigationController = navigationController
@@ -51,7 +49,7 @@ final class AppCoordinator: Coordinator, NetworkManagerAccesing {
 
     func fetchNetworkData() {
 
-        networkManager.loadData { result in
+        networkManager.loadDataWith(UrlRequest.request) { result in
 
             DispatchQueue.main.async {
 
@@ -91,13 +89,10 @@ extension AppCoordinator: MeteoriteListViewControllerDelegate {
 
         if !UserDefaultsConfig.hasSeenAppIntroduction {
 
-            firstLaunchInformationViewController = FirstLaunchInformationViewController()
+            let appIntroductionViewController = AppIntroductionViewController()
+            appIntroductionViewController.delegate = self
 
-            guard let firstLaunchInformationViewController = firstLaunchInformationViewController else { return }
-
-            firstLaunchInformationViewController.delegate = self
-
-            navigationController.present(firstLaunchInformationViewController, animated: true, completion: nil)
+            navigationController.present(appIntroductionViewController, animated: true, completion: nil)
 
             UserDefaultsConfig.hasSeenAppIntroduction = true
         }
@@ -110,15 +105,10 @@ extension AppCoordinator: MeteoriteListViewControllerDelegate {
     }
 }
 
-extension AppCoordinator: FirstLaunchInformationViewControllerDelegate {
+extension AppCoordinator: AppIntroductionViewControllerDelegate {
 
-    func firstLaunchInformationViewControllerDismiss(_ controller: FirstLaunchInformationViewController) {
+    func appIntroductionViewControllerDismiss(_ controller: AppIntroductionViewController) {
 
-        firstLaunchInformationViewController?.dismiss(animated: true, completion: nil)
-    }
-
-    func firstLaunchInformationViewControllerDidDissapear(_ controller: FirstLaunchInformationViewController) {
-
-        firstLaunchInformationViewController = nil
+        navigationController.dismiss(animated: true, completion: nil)
     }
 }

@@ -45,30 +45,37 @@ final class MeteoriteDetailViewController: UIViewController {
             year: String(meteorite.year),
             items: [
                 MeteoriteDetailView.DetailItem(title: "Recctclass", text: meteorite.recclass),
-                MeteoriteDetailView.DetailItem(title: "Mass", text: "\(Formatter.formatWeight(meteorite.mass)) g"),
+                MeteoriteDetailView.DetailItem(
+                    title: "Mass", text: "\(Formatter.doubleToString(meteorite.mass, maxFractionDigits: 2)) g"
+                ),
                 MeteoriteDetailView.DetailItem(title: "Fall", text: meteorite.fall),
-                MeteoriteDetailView.DetailItem(title: "Latitude", text: Formatter.formatCoordinate(meteorite.latitude)),
-                MeteoriteDetailView.DetailItem(title: "Longitude", text: Formatter.formatCoordinate(meteorite.longitude))
+                MeteoriteDetailView.DetailItem(title: "Latitude", text: Formatter.doubleToString(meteorite.latitude)),
+                MeteoriteDetailView.DetailItem(title: "Longitude", text: Formatter.doubleToString(meteorite.longitude))
             ],
             annotation: annotationFrom(meteorite: meteorite)
         )
     }
 
-    private func coordinateFrom(meteorite: CDMeteorite) -> CLLocationCoordinate2D? {
+    private func coordinateFrom(meteorite: CDMeteorite) -> CLLocationCoordinate2D {
 
-        if meteorite.latitude == 0.0, meteorite.longitude == 0.0 {
-            return nil
+        var latitude = meteorite.latitude
+        var longitude = meteorite.longitude
+
+        if meteorite.latitude == 0.0 {
+            latitude = .leastNormalMagnitude
         }
 
-        return CLLocationCoordinate2D(latitude: meteorite.latitude, longitude: meteorite.longitude)
+        if meteorite.longitude == 0.0 {
+            longitude = .leastNormalMagnitude
+        }
+
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 
-    private func annotationFrom(meteorite: CDMeteorite) -> MKPointAnnotation? {
-
-        guard let coordinate = coordinateFrom(meteorite: meteorite) else { return nil }
+    private func annotationFrom(meteorite: CDMeteorite) -> MKPointAnnotation {
 
         let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
+        annotation.coordinate = coordinateFrom(meteorite: meteorite)
 
         return annotation
     }
@@ -78,7 +85,7 @@ extension MeteoriteDetailViewController: MeteoriteDetailViewDelegate {
 
     func meteoriteDetailView(_ view: MeteoriteDetailView, didTouch mapView: MKMapView) {
 
-        guard let coordinate = coordinateFrom(meteorite: meteorite) else { return }
+        let coordinate = coordinateFrom(meteorite: meteorite)
 
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
         mapItem.name = meteorite.name

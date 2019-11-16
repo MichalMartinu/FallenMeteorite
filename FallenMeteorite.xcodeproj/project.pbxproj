@@ -17,7 +17,7 @@
 		070CE89D237C495B00610882 /* MeteoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE89C237C495B00610882 /* MeteoriteListView.swift */; };
 		070CE89F237C4A5300610882 /* MeteoriteListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */; };
 		070CE8A1237C5D4400610882 /* MeteoriteItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */; };
-		0724C7D7237DCEB400F47D91 /* FirstLaunchInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7D6237DCEB400F47D91 /* FirstLaunchInformationViewController.swift */; };
+		0724C7D7237DCEB400F47D91 /* AppIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7D6237DCEB400F47D91 /* AppIntroductionViewController.swift */; };
 		0724C7D9237DDDAE00F47D91 /* MeteoriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7D8237DDDAE00F47D91 /* MeteoriteDetailViewController.swift */; };
 		0724C7DD237EA8CA00F47D91 /* LabelWithDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7DC237EA8CA00F47D91 /* LabelWithDescription.swift */; };
 		0724C7DF237EA95D00F47D91 /* MeteoriteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724C7DE237EA95D00F47D91 /* MeteoriteDetailView.swift */; };
@@ -35,7 +35,20 @@
 		0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B5237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld */; };
 		0786D0E2237B224C00D6BEB1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */; };
 		07D82EB32380492D00944BD2 /* NetworkManagerAccesing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D82EB22380492D00944BD2 /* NetworkManagerAccesing.swift */; };
+		07FEACFE238053E500F766F8 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEACFD238053E500F766F8 /* NetworkTests.swift */; };
+		07FEAD062380582800F766F8 /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEAD052380582800F766F8 /* UrlRequest.swift */; };
+		07FEAD0B23805D3300F766F8 /* FormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEAD0A23805D3300F766F8 /* FormatterTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07FEAD00238053E500F766F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0786D085237AD7E800D6BEB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0786D08C237AD7E800D6BEB1;
+			remoteInfo = FallenMeteorite;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		070B5159237C69AD00262BDD /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -48,7 +61,7 @@
 		070CE89C237C495B00610882 /* MeteoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListView.swift; sourceTree = "<group>"; };
 		070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteListDataSource.swift; sourceTree = "<group>"; };
 		070CE8A0237C5D4400610882 /* MeteoriteItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteItemTableViewCell.swift; sourceTree = "<group>"; };
-		0724C7D6237DCEB400F47D91 /* FirstLaunchInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchInformationViewController.swift; sourceTree = "<group>"; };
+		0724C7D6237DCEB400F47D91 /* AppIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntroductionViewController.swift; sourceTree = "<group>"; };
 		0724C7D8237DDDAE00F47D91 /* MeteoriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteDetailViewController.swift; sourceTree = "<group>"; };
 		0724C7DC237EA8CA00F47D91 /* LabelWithDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithDescription.swift; sourceTree = "<group>"; };
 		0724C7DE237EA95D00F47D91 /* MeteoriteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteDetailView.swift; sourceTree = "<group>"; };
@@ -68,10 +81,22 @@
 		0786D0B6237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FallenMeteorite.xcdatamodel; sourceTree = "<group>"; };
 		0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		07D82EB22380492D00944BD2 /* NetworkManagerAccesing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAccesing.swift; sourceTree = "<group>"; };
+		07FEACFB238053E500F766F8 /* FallenMeteoriteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallenMeteoriteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07FEACFD238053E500F766F8 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		07FEACFF238053E500F766F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07FEAD052380582800F766F8 /* UrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequest.swift; sourceTree = "<group>"; };
+		07FEAD0A23805D3300F766F8 /* FormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0786D08A237AD7E800D6BEB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07FEACF8238053E500F766F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -109,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				0786D08F237AD7E800D6BEB1 /* FallenMeteorite */,
+				07FEACFC238053E500F766F8 /* FallenMeteoriteTests */,
 				0786D08E237AD7E800D6BEB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0786D08D237AD7E800D6BEB1 /* FallenMeteorite.app */,
+				07FEACFB238053E500F766F8 /* FallenMeteoriteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,7 +179,7 @@
 			children = (
 				0786D094237AD7E800D6BEB1 /* MeteoriteListViewController.swift */,
 				0724C7D8237DDDAE00F47D91 /* MeteoriteDetailViewController.swift */,
-				0724C7D6237DCEB400F47D91 /* FirstLaunchInformationViewController.swift */,
+				0724C7D6237DCEB400F47D91 /* AppIntroductionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				0786D0B1237AF8C700D6BEB1 /* NetworkManager.swift */,
+				07FEAD052380582800F766F8 /* UrlRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -195,6 +223,24 @@
 				07D82EB22380492D00944BD2 /* NetworkManagerAccesing.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		07FEACFC238053E500F766F8 /* FallenMeteoriteTests */ = {
+			isa = PBXGroup;
+			children = (
+				07FEACFD238053E500F766F8 /* NetworkTests.swift */,
+				07FEAD0A23805D3300F766F8 /* FormatterTests.swift */,
+				07FEAD0923805BD900F766F8 /* Resources */,
+			);
+			path = FallenMeteoriteTests;
+			sourceTree = "<group>";
+		};
+		07FEAD0923805BD900F766F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07FEACFF238053E500F766F8 /* Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +263,24 @@
 			productReference = 0786D08D237AD7E800D6BEB1 /* FallenMeteorite.app */;
 			productType = "com.apple.product-type.application";
 		};
+		07FEACFA238053E500F766F8 /* FallenMeteoriteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07FEAD02238053E500F766F8 /* Build configuration list for PBXNativeTarget "FallenMeteoriteTests" */;
+			buildPhases = (
+				07FEACF7238053E500F766F8 /* Sources */,
+				07FEACF8238053E500F766F8 /* Frameworks */,
+				07FEACF9238053E500F766F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07FEAD01238053E500F766F8 /* PBXTargetDependency */,
+			);
+			name = FallenMeteoriteTests;
+			productName = FallenMeteoriteTests;
+			productReference = 07FEACFB238053E500F766F8 /* FallenMeteoriteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -229,6 +293,10 @@
 				TargetAttributes = {
 					0786D08C237AD7E800D6BEB1 = {
 						CreatedOnToolsVersion = 11.2;
+					};
+					07FEACFA238053E500F766F8 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 0786D08C237AD7E800D6BEB1;
 					};
 				};
 			};
@@ -246,6 +314,7 @@
 			projectRoot = "";
 			targets = (
 				0786D08C237AD7E800D6BEB1 /* FallenMeteorite */,
+				07FEACFA238053E500F766F8 /* FallenMeteoriteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +326,13 @@
 			files = (
 				0786D09D237AD7EA00D6BEB1 /* LaunchScreen.storyboard in Resources */,
 				0786D09A237AD7EA00D6BEB1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07FEACF9238053E500F766F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +356,8 @@
 				0724C7DD237EA8CA00F47D91 /* LabelWithDescription.swift in Sources */,
 				07D82EB32380492D00944BD2 /* NetworkManagerAccesing.swift in Sources */,
 				075FE2B7237C1F7500DC8681 /* UserDefault.swift in Sources */,
-				0724C7D7237DCEB400F47D91 /* FirstLaunchInformationViewController.swift in Sources */,
+				07FEAD062380582800F766F8 /* UrlRequest.swift in Sources */,
+				0724C7D7237DCEB400F47D91 /* AppIntroductionViewController.swift in Sources */,
 				07675743238016F0004BEE07 /* UIButton+Extensions.swift in Sources */,
 				070B515A237C69AD00262BDD /* Images.swift in Sources */,
 				0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */,
@@ -296,7 +373,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07FEACF7238053E500F766F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07FEAD0B23805D3300F766F8 /* FormatterTests.swift in Sources */,
+				07FEACFE238053E500F766F8 /* NetworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07FEAD01238053E500F766F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0786D08C237AD7E800D6BEB1 /* FallenMeteorite */;
+			targetProxy = 07FEAD00238053E500F766F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0786D09B237AD7EA00D6BEB1 /* LaunchScreen.storyboard */ = {
@@ -462,6 +556,46 @@
 			};
 			name = Release;
 		};
+		07FEAD03238053E500F766F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H84BAJDPWF;
+				INFOPLIST_FILE = FallenMeteoriteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michalmartinu.FallenMeteoriteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FallenMeteorite.app/FallenMeteorite";
+			};
+			name = Debug;
+		};
+		07FEAD04238053E500F766F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H84BAJDPWF;
+				INFOPLIST_FILE = FallenMeteoriteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michalmartinu.FallenMeteoriteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FallenMeteorite.app/FallenMeteorite";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -479,6 +613,15 @@
 			buildConfigurations = (
 				0786D0A2237AD7EA00D6BEB1 /* Debug */,
 				0786D0A3237AD7EA00D6BEB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07FEAD02238053E500F766F8 /* Build configuration list for PBXNativeTarget "FallenMeteoriteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07FEAD03238053E500F766F8 /* Debug */,
+				07FEAD04238053E500F766F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

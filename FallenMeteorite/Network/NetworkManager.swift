@@ -16,29 +16,9 @@ final class NetworkManager {
         case error(String)
     }
 
-    var urlRequest: URL? {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = scheme
-        urlComponents.host = host
-        urlComponents.path = path
-        urlComponents.queryItems = [
-            URLQueryItem(name: "$$app_token", value: appToken),
-            URLQueryItem(name: "$where", value: sqlQueryString),
-            URLQueryItem(name: "$order", value: orderString)
-        ]
-        return urlComponents.url
-    }
-
-    private let scheme = "https"
-    private let host = "data.nasa.gov"
-    private let path = "/resource/gh4g-9sfh.json"
-    private let appToken = "3STavZkgZFubnTHrKZQg9ITmo"
-    private let sqlQueryString = "year >= '2011-01-01T00:00' and mass IS NOT NULL"
-    private let orderString = "mass DESC"
-
     private let offlineErrorCode = -1009
 
-    func loadData(completion: @escaping (Result) -> Void) {
+    func loadDataWith(_ urlRequest: URL?, completion: @escaping (Result) -> Void) {
 
         guard let urlRequest = urlRequest else {
             return completion(.error("Invalid URL, we can't update your feed :("))

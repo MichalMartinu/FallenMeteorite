@@ -12,21 +12,22 @@ enum Formatter {
 
     static func yearFromJson(_ jsonString: String) -> String {
 
-        let index = jsonString.index(jsonString.startIndex, offsetBy: 4)
-        return String(jsonString[..<index])
+        var string = jsonString
+
+        if let range = jsonString.range(of: "-") {
+          string.removeSubrange(range.lowerBound..<jsonString.endIndex)
+        }
+
+        return string
     }
 
-    static func formatWeight(_ weight: Double) -> String {
+    static func doubleToString(_ number: Double, maxFractionDigits: Int = Int.max) -> String {
 
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
+        formatter.maximumFractionDigits = maxFractionDigits
 
         formatter.numberStyle = .decimal
-        return formatter.string(from: weight as NSNumber) ?? "n/a"
-    }
-
-    static func formatCoordinate(_ coordinate: Double) -> String {
-        return coordinate == 0.0 ? "Unknown" : String(coordinate)
+        return formatter.string(from: number as NSNumber) ?? "n/a"
     }
 }
