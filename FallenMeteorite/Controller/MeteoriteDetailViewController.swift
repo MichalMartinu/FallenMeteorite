@@ -52,32 +52,8 @@ final class MeteoriteDetailViewController: UIViewController {
                 MeteoriteDetailView.DetailItem(title: "Latitude", text: Formatter.doubleToString(meteorite.latitude)),
                 MeteoriteDetailView.DetailItem(title: "Longitude", text: Formatter.doubleToString(meteorite.longitude))
             ],
-            annotation: annotationFrom(meteorite: meteorite)
+            annotation: meteorite.annotation
         )
-    }
-
-    private func coordinateFrom(meteorite: CDMeteorite) -> CLLocationCoordinate2D {
-
-        var latitude = meteorite.latitude
-        var longitude = meteorite.longitude
-
-        if meteorite.latitude == 0.0 {
-            latitude = .leastNormalMagnitude
-        }
-
-        if meteorite.longitude == 0.0 {
-            longitude = .leastNormalMagnitude
-        }
-
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    }
-
-    private func annotationFrom(meteorite: CDMeteorite) -> MKPointAnnotation {
-
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinateFrom(meteorite: meteorite)
-
-        return annotation
     }
 }
 
@@ -85,9 +61,10 @@ extension MeteoriteDetailViewController: MeteoriteDetailViewDelegate {
 
     func meteoriteDetailView(_ view: MeteoriteDetailView, didTouch mapView: MKMapView) {
 
-        let coordinate = coordinateFrom(meteorite: meteorite)
-
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
+        let mapItem = MKMapItem(placemark: MKPlacemark(
+            coordinate: meteorite.coordinate,
+            addressDictionary: nil)
+        )
         mapItem.name = meteorite.name
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsMapTypeKey : MKMapType.hybrid.rawValue])
     }

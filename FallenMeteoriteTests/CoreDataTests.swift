@@ -8,6 +8,7 @@
 
 import XCTest
 import CoreData
+import MapKit
 
 @testable import FallenMeteorite
 
@@ -42,7 +43,7 @@ class CoreDataTests: XCTestCase {
         mass: "3",
         fall: "fallen",
         year: "2013-01-01T00:00:000",
-        geolocation: Geolocation(latitude: "23.123", longitude: "34.231")
+        geolocation: Geolocation(latitude: "0.0", longitude: "0.0")
     )
 
     override func setUp() {
@@ -63,9 +64,41 @@ class CoreDataTests: XCTestCase {
 
     func testCreateMeteorite() {
 
-        let meteorite = coreDataManager.saveMeteorites([meteorite3])
+        let meteorites = coreDataManager.saveMeteorites([meteorite1])
+
+        XCTAssertNotNil(meteorites)
+
+        let meteorite = meteorites.first
 
         XCTAssertNotNil(meteorite)
+
+
+        XCTAssertEqual(meteorite?.name, meteorite1.name)
+        XCTAssertEqual(meteorite?.id, meteorite1.id)
+        XCTAssertEqual(meteorite?.recclass, meteorite1.recclass)
+        XCTAssertEqual(meteorite?.mass, 1)
+        XCTAssertEqual(meteorite?.fall, meteorite1.fall)
+        XCTAssertEqual(meteorite?.year, 2011)
+        XCTAssertEqual(meteorite?.latitude, 23.123)
+        XCTAssertEqual(meteorite?.longitude, 34.231)
+    }
+
+    func testCreateCoordinateWithZeros() {
+
+        let meteorite = coreDataManager.saveMeteorites([meteorite3])
+
+        XCTAssertNotNil(meteorite.first)
+        XCTAssertEqual(meteorite.first?.coordinate.latitude, .leastNormalMagnitude)
+        XCTAssertEqual(meteorite.first?.coordinate.longitude, .leastNormalMagnitude)
+    }
+
+    func testCreateAnnotation() {
+
+        let meteorite = coreDataManager.saveMeteorites([meteorite1])
+
+        XCTAssertNotNil(meteorite.first)
+        XCTAssertEqual(meteorite.first?.annotation.coordinate.latitude, 23.123)
+        XCTAssertEqual(meteorite.first?.annotation.coordinate.longitude, 34.231)
     }
 
     func testFetchAllMeteoritesSorter() {
@@ -93,7 +126,6 @@ class CoreDataTests: XCTestCase {
 
         XCTAssertEqual(numberOfItemsInPersistentStore, 0)
     }
-
 
     // MARK: moc in-memory persistant store
 

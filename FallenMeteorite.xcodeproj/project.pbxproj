@@ -35,6 +35,7 @@
 		0786D0B4237B038400D6BEB1 /* Meteorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B3237B038400D6BEB1 /* Meteorite.swift */; };
 		0786D0B7237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0B5237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodeld */; };
 		0786D0E2237B224C00D6BEB1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */; };
+		07A6338F23812CB000264CEB /* CDMeteorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6338E23812CB000264CEB /* CDMeteorite.swift */; };
 		07D82EB32380492D00944BD2 /* NetworkManagerAccesing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D82EB22380492D00944BD2 /* NetworkManagerAccesing.swift */; };
 		07FEACFE238053E500F766F8 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEACFD238053E500F766F8 /* NetworkTests.swift */; };
 		07FEAD062380582800F766F8 /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEAD052380582800F766F8 /* UrlRequest.swift */; };
@@ -82,6 +83,7 @@
 		0786D0B3237B038400D6BEB1 /* Meteorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteorite.swift; sourceTree = "<group>"; };
 		0786D0B6237B1AB100D6BEB1 /* FallenMeteorite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FallenMeteorite.xcdatamodel; sourceTree = "<group>"; };
 		0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		07A6338E23812CB000264CEB /* CDMeteorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMeteorite.swift; sourceTree = "<group>"; };
 		07D82EB22380492D00944BD2 /* NetworkManagerAccesing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAccesing.swift; sourceTree = "<group>"; };
 		07FEACFB238053E500F766F8 /* FallenMeteoriteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallenMeteoriteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FEACFD238053E500F766F8 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				0786D0B3237B038400D6BEB1 /* Meteorite.swift */,
+				07A6338E23812CB000264CEB /* CDMeteorite.swift */,
 				0786D0E1237B224C00D6BEB1 /* CoreDataManager.swift */,
 				070CE89E237C4A5300610882 /* MeteoriteListDataSource.swift */,
 			);
@@ -355,6 +358,7 @@
 				0786D095237AD7E800D6BEB1 /* MeteoriteListViewController.swift in Sources */,
 				070B515C237C6B8300262BDD /* Layout.swift in Sources */,
 				070B5168237D827C00262BDD /* UIView+Extensions.swift in Sources */,
+				07A6338F23812CB000264CEB /* CDMeteorite.swift in Sources */,
 				0786D0AB237AE73900D6BEB1 /* Coordinator.swift in Sources */,
 				0724C7DD237EA8CA00F47D91 /* LabelWithDescription.swift in Sources */,
 				07D82EB32380492D00944BD2 /* NetworkManagerAccesing.swift in Sources */,
