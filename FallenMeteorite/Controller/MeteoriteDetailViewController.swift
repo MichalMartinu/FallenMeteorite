@@ -44,13 +44,13 @@ final class MeteoriteDetailViewController: UIViewController {
             title: meteorite.name,
             year: String(meteorite.year),
             items: [
-                MeteoriteDetailView.DetailItem(title: "Recctclass", text: meteorite.recclass),
+                MeteoriteDetailView.DetailItem(title: AppStrings.recclass.rawValue, text: meteorite.recclass),
                 MeteoriteDetailView.DetailItem(
-                    title: "Mass", text: "\(Formatter.doubleToString(meteorite.mass, maxFractionDigits: 2)) g"
+                    title: AppStrings.mass.rawValue, text: "\(Formatter.doubleToString(meteorite.mass, maxFractionDigits: 2)) g"
                 ),
-                MeteoriteDetailView.DetailItem(title: "Fall", text: meteorite.fall),
-                MeteoriteDetailView.DetailItem(title: "Latitude", text: Formatter.doubleToString(meteorite.latitude)),
-                MeteoriteDetailView.DetailItem(title: "Longitude", text: Formatter.doubleToString(meteorite.longitude))
+                MeteoriteDetailView.DetailItem(title: AppStrings.fall.rawValue, text: meteorite.fall),
+                MeteoriteDetailView.DetailItem(title: AppStrings.latitude.rawValue, text: Formatter.doubleToString(meteorite.latitude)),
+                MeteoriteDetailView.DetailItem(title: AppStrings.longitude.rawValue, text: Formatter.doubleToString(meteorite.longitude))
             ],
             annotation: meteorite.annotation
         )

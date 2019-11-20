@@ -39,23 +39,6 @@ final class MeteoriteListView: UIView {
         return view
     }()
 
-    private let loadingHeaderText = "Meteorites are loading"
-    private let loadingMessageText = "While this app is loading I would like to tell you:\nHave a good day! :)"
-
-    private let emptyImage = Images.image(.meteorite)
-    private let emptyHeaderText = "No meteorites to show"
-    private let emptyMessageText = "We can't find any meteorites in database. :("
-
-    private let errorImage = Images.image(.meteorite)
-    private let errorHeaderText = "Error when loading data"
-
-    private let offlineImage = Images.image(.meteorite)
-    private let offlineHeaderText = "You are Offline"
-    private let offlineMessageText = "Please check your internet connection and try it again."
-
-    private let tryAgainButtonText = "Try again"
-
-
     init() {
         super.init(frame: .zero)
 
@@ -86,25 +69,28 @@ final class MeteoriteListView: UIView {
                 informationView.isHidden = true
             case .empty:
                 informationView.configure(
-                    header: emptyHeaderText,
-                    message: emptyMessageText,
-                    image: emptyImage
+                    header: AppStrings.emptyHeader.rawValue,
+                    message: AppStrings.emptyMessage.rawValue,
+                    image: Images.image(.meteorite)
                 )
             case .loading:
-                informationView.configure(header: loadingHeaderText, message: loadingMessageText)
+                informationView.configure(
+                    header: AppStrings.loadingHeader.rawValue,
+                    message: AppStrings.loadingMessage.rawValue
+            )
             case .offline:
                 informationView.configure(
-                    header: offlineHeaderText,
-                    message: offlineMessageText,
-                    image: offlineImage,
-                    buttonTitle: tryAgainButtonText
+                    header: AppStrings.offlineHeader.rawValue,
+                    message: AppStrings.offlineMessage.rawValue,
+                    image: Images.image(.meteorite),
+                    buttonTitle: AppStrings.tryAgain.rawValue
                 )
             case .error:
                 informationView.configure(
-                    header: errorHeaderText,
+                    header: AppStrings.errorHeader.rawValue,
                     message: message,
-                    image: errorImage,
-                    buttonTitle: tryAgainButtonText
+                    image: Images.image(.meteorite),
+                    buttonTitle: AppStrings.tryAgain.rawValue
                 )
         }
     }

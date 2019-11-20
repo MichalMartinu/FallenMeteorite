@@ -1,5 +1,5 @@
 //
-//  CoreDataManager.swift
+//  MeteoriteCoreData.swift
 //  FallenMeteorite
 //
 //  Created by Michal Martinů on 12/11/2019.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-final class CoreDataManager {
+final class MeteoriteCoreData {
 
     private let context: NSManagedObjectContext
 
@@ -20,9 +20,7 @@ final class CoreDataManager {
 
     func saveMeteorites(_ meteorites: [Meteorite]) -> [CDMeteorite] {
 
-        var savedMeteorites = [CDMeteorite]()
-
-        meteorites.forEach { meteorite in
+        let savedMeteorites = meteorites.map { meteorite -> CDMeteorite in
 
             let savedMeteorite = CDMeteorite(context: context)
 
@@ -41,7 +39,7 @@ final class CoreDataManager {
                 savedMeteorite.longitude = Double(longitude) ?? 0.0
             }
 
-            savedMeteorites.append(savedMeteorite)
+            return savedMeteorite
         }
 
         do {

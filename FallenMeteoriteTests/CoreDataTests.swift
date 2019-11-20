@@ -1,5 +1,5 @@
 //
-//  CoreDataTests.swift
+//  MeteoriteCoreDataTests.swift
 //  FallenMeteoriteTests
 //
 //  Created by Michal Martinů on 16/11/2019.
@@ -14,7 +14,7 @@ import MapKit
 
 class CoreDataTests: XCTestCase {
 
-    var coreDataManager: CoreDataManager!
+    var meteoriteCoreData: MeteoriteCoreData!
 
     let meteorite1 = Meteorite(
         name: "Test 1",
@@ -49,7 +49,7 @@ class CoreDataTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        coreDataManager = CoreDataManager(context: mockPersistantContainer.viewContext)
+        meteoriteCoreData = MeteoriteCoreData(context: mockPersistantContainer.viewContext)
         initStubs()
     }
 
@@ -57,14 +57,14 @@ class CoreDataTests: XCTestCase {
         super.tearDown()
 
         flushData()
-        coreDataManager = nil
+        meteoriteCoreData = nil
 
         super.tearDown()
     }
 
     func testCreateMeteorite() {
 
-        let meteorites = coreDataManager.saveMeteorites([meteorite1])
+        let meteorites = meteoriteCoreData.saveMeteorites([meteorite1])
 
         XCTAssertNotNil(meteorites)
 
@@ -85,7 +85,7 @@ class CoreDataTests: XCTestCase {
 
     func testCreateCoordinateWithZeros() {
 
-        let meteorite = coreDataManager.saveMeteorites([meteorite3])
+        let meteorite = meteoriteCoreData.saveMeteorites([meteorite3])
 
         XCTAssertNotNil(meteorite.first)
         XCTAssertEqual(meteorite.first?.coordinate.latitude, .leastNormalMagnitude)
@@ -94,7 +94,7 @@ class CoreDataTests: XCTestCase {
 
     func testCreateAnnotation() {
 
-        let meteorite = coreDataManager.saveMeteorites([meteorite1])
+        let meteorite = meteoriteCoreData.saveMeteorites([meteorite1])
 
         XCTAssertNotNil(meteorite.first)
         XCTAssertEqual(meteorite.first?.annotation.coordinate.latitude, 23.123)
@@ -103,7 +103,7 @@ class CoreDataTests: XCTestCase {
 
     func testFetchAllMeteoritesSorter() {
 
-        let results = coreDataManager.fetchAllMeteoritesSorted()
+        let results = meteoriteCoreData.fetchAllMeteoritesSorted()
 
         XCTAssertEqual(results.count, 2)
         XCTAssertEqual(numberOfItemsInPersistentStore, 2)
@@ -114,7 +114,7 @@ class CoreDataTests: XCTestCase {
 
     func testSaveMeteorite() {
 
-        let results = coreDataManager.saveMeteorites([meteorite3])
+        let results = meteoriteCoreData.saveMeteorites([meteorite3])
 
         XCTAssertEqual(results.count, 1)
         XCTAssertEqual(numberOfItemsInPersistentStore, 3)
@@ -122,7 +122,7 @@ class CoreDataTests: XCTestCase {
 
     func testDeleteAllMeteorites() {
 
-        coreDataManager.deleteAllMeteorites()
+        meteoriteCoreData.deleteAllMeteorites()
 
         XCTAssertEqual(numberOfItemsInPersistentStore, 0)
     }

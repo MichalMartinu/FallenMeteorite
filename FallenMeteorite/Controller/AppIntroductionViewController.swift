@@ -20,16 +20,15 @@ final class AppIntroductionViewController: UIViewController {
     private lazy var rootView: InformationView = {
         let view = InformationView()
         view.delegate = self
-        view.configure(header: header, message: message, image: image, buttonTitle: buttonTitle)
+        view.configure(
+            header: AppStrings.introductionHeader.rawValue,
+            message: AppStrings.introductionMessage.rawValue,
+            image: Images.image(.meteorite),
+            buttonTitle: AppStrings.thatIsCool.rawValue
+        )
         view.backgroundColor = CustomColor.color(.backgroundGray)
         return view
     }()
-
-    private let header = "Welcome to fallen meteorite"
-    private let message = "This application would show you fallen meteorites on Earth since year 2011 sorted by weight descending. Application updates data automatically."
-    private let buttonTitle = "That is cool"
-    private let image = Images.image(.meteorite)
-
 
     override func loadView() {
         super.loadView()

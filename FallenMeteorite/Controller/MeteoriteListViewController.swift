@@ -27,6 +27,10 @@ final class MeteoriteListViewController: UIViewController {
             MeteoriteItemTableViewCell.self,
             forCellReuseIdentifier: MeteoriteItemTableViewCell.identifier
         )
+        view.tableView.register(
+            MeteoriteTotalCountTableViewCell.self,
+            forCellReuseIdentifier: MeteoriteTotalCountTableViewCell.identifier
+        )
         view.delegate = self
         return view
     }()
@@ -93,8 +97,12 @@ extension MeteoriteListViewController: AppCoordinatorDelegate {
 extension MeteoriteListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return MeteoriteItemTableViewCell.preferredHeight
+
+        if indexPath.row == dataSource.totalCountCellIndex {
+            return MeteoriteTotalCountTableViewCell.preferredHeight
+        } else {
+            return MeteoriteItemTableViewCell.preferredHeight
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

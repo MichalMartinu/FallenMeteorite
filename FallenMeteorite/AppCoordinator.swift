@@ -17,7 +17,7 @@ protocol AppCoordinatorDelegate: AnyObject {
     func appCoordintorSetErrorState(_ coordinator: AppCoordinator, message: String)
 }
 
-final class AppCoordinator: Coordinator, NetworkManagerAccesing {
+final class AppCoordinator: Coordinator {
 
     var navigationController: UINavigationController
 
@@ -30,7 +30,9 @@ final class AppCoordinator: Coordinator, NetworkManagerAccesing {
         return controller
     }()
 
-    private let coreDataManager = CoreDataManager(context: AppDelegate.viewContext)
+    private let networkManager = NetworkManager()
+    private let coreDataContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private lazy var meteoriteCoreData = MeteoriteCoreData(context: coreDataContext)
 
     init(navigationController: UINavigationController) {
 
@@ -43,7 +45,7 @@ final class AppCoordinator: Coordinator, NetworkManagerAccesing {
         delegate?.appCoordinatorSetLoadingState(self)
 
         if UserDefaultsConfig.lastUpadateDate != nil {
-            delegate?.appCoordinator(self, upateMeteorites: coreDataManager.fetchAllMeteoritesSorted())
+            delegate?.appCoordinator(self, upateMeteorites: meteoriteCoreData.fetchAllMeteoritesSorted())
         }
     }
 
@@ -70,9 +72,9 @@ final class AppCoordinator: Coordinator, NetworkManagerAccesing {
 
     private func updateData(_ meteorites: [Meteorite]) -> [CDMeteorite] {
         
-        coreDataManager.deleteAllMeteorites()
+        meteoriteCoreData.deleteAllMeteorites()
 
-        let meteorites = coreDataManager.saveMeteorites(meteorites)
+        let meteorites = meteoriteCoreData.saveMeteorites(meteorites)
 
         return meteorites
     }
